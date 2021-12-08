@@ -1,0 +1,9 @@
+feast:
+  registry: /data/registry.db
+  active_store: online
+  stores:
+  - name: online
+    type: REDIS 
+    config:
+      host: redis
+      port: 6379
