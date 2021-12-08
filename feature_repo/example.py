@@ -30,7 +30,7 @@ feature_views = [
 feature_services = [
     FeatureService(
         name=f"feature_service_{i}",
-        features=feature_views[:5*i],
+        features=feature_views[:5*(i + 1)],
     )
     for i in range(5)
 ]
