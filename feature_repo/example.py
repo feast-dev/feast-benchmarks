@@ -34,3 +34,11 @@ feature_services = [
     )
     for i in range(5)
 ]
+
+def add_definitions_in_globals():
+    for i, fv in enumerate(feature_views):
+        globals()[f"feature_view_{i}"] = fv
+    for i, fs in enumerate(feature_services):
+        globals()[f"feature_service_{i}"] = fs
+
+add_definitions_in_globals()
