@@ -18,11 +18,11 @@ single_run() {
 		--requests ${UNIQUE_REQUESTS_NUM} \
 		--output requests-$1-$2.json
 
-	echo "ghz ${GHZ_FLAGS}
--n ${TOTAL_REQUESTS_NUM}
---data-file requests-$1-$2.json
+	echo "ghz ${GHZ_FLAGS} \\
+-n ${TOTAL_REQUESTS_NUM} \\
+--data-file requests-$1-$2.json \\
 --rps $4 \\
--c $3
+-c $3 \\
 $TARGET"
 
 	ghz ${GHZ_FLAGS}\
