@@ -1,0 +1,1925 @@
+Change only number of rows
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	12.90 ms
+  Fastest:	0.90 ms
+  Average:	1.44 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  0.903  [1]    |
+  2.103  [9873] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.302  [16]   |
+  4.501  [1]    |
+  5.700  [2]    |
+  6.899  [4]    |
+  8.099  [0]    |
+  9.298  [0]    |
+  10.497 [0]    |
+  11.696 [1]    |
+  12.895 [2]    |
+
+Latency distribution:
+  10 % in 1.01 ms 
+  25 % in 1.23 ms 
+  50 % in 1.45 ms 
+  75 % in 1.67 ms 
+  90 % in 1.71 ms 
+  95 % in 1.73 ms 
+  99 % in 1.81 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 10; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-10-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.01 s
+  Slowest:	22.14 ms
+  Fastest:	5.56 ms
+  Average:	6.36 ms
+  Requests/sec:	98.99
+
+Response time histogram:
+  5.557  [1]    |
+  7.216  [9751] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  8.874  [101]  |
+  10.532 [20]   |
+  12.191 [6]    |
+  13.849 [5]    |
+  15.507 [1]    |
+  17.166 [5]    |
+  18.824 [3]    |
+  20.483 [5]    |
+  22.141 [2]    |
+
+Latency distribution:
+  10 % in 5.99 ms 
+  25 % in 6.14 ms 
+  50 % in 6.29 ms 
+  75 % in 6.49 ms 
+  90 % in 6.69 ms 
+  95 % in 6.82 ms 
+  99 % in 7.38 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 20; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-20-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.01 s
+  Slowest:	26.42 ms
+  Fastest:	10.43 ms
+  Average:	11.73 ms
+  Requests/sec:	98.99
+
+Response time histogram:
+  10.432 [1]    |
+  12.030 [8077] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  13.629 [1659] |∎∎∎∎∎∎∎∎
+  15.227 [92]   |
+  16.825 [35]   |
+  18.424 [21]   |
+  20.022 [2]    |
+  21.620 [3]    |
+  23.218 [2]    |
+  24.817 [4]    |
+  26.415 [4]    |
+
+Latency distribution:
+  10 % in 11.17 ms 
+  25 % in 11.36 ms 
+  50 % in 11.62 ms 
+  75 % in 11.92 ms 
+  90 % in 12.27 ms 
+  95 % in 12.62 ms 
+  99 % in 14.56 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 30; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-30-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.02 s
+  Slowest:	42.81 ms
+  Fastest:	15.48 ms
+  Average:	17.78 ms
+  Requests/sec:	98.98
+
+Response time histogram:
+  15.484 [1]    |
+  18.216 [7413] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  20.949 [1934] |∎∎∎∎∎∎∎∎∎∎
+  23.681 [360]  |∎∎
+  26.414 [125]  |∎
+  29.146 [41]   |
+  31.879 [17]   |
+  34.611 [5]    |
+  37.344 [2]    |
+  40.076 [1]    |
+  42.809 [1]    |
+
+Latency distribution:
+  10 % in 16.48 ms 
+  25 % in 16.75 ms 
+  50 % in 17.20 ms 
+  75 % in 18.22 ms 
+  90 % in 19.35 ms 
+  95 % in 21.23 ms 
+  99 % in 25.43 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 40; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-40-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.02 s
+  Slowest:	57.53 ms
+  Fastest:	20.74 ms
+  Average:	23.68 ms
+  Requests/sec:	98.98
+
+Response time histogram:
+  20.744 [1]    |
+  24.422 [7563] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  28.101 [1720] |∎∎∎∎∎∎∎∎∎
+  31.779 [431]  |∎∎
+  35.457 [94]   |
+  39.135 [68]   |
+  42.814 [17]   |
+  46.492 [3]    |
+  50.170 [1]    |
+  53.848 [1]    |
+  57.527 [1]    |
+
+Latency distribution:
+  10 % in 21.76 ms 
+  25 % in 22.12 ms 
+  50 % in 22.69 ms 
+  75 % in 24.26 ms 
+  90 % in 27.09 ms 
+  95 % in 28.67 ms 
+  99 % in 34.98 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 50; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-50-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.03 s
+  Slowest:	55.58 ms
+  Fastest:	25.84 ms
+  Average:	29.76 ms
+  Requests/sec:	98.97
+
+Response time histogram:
+  25.836 [1]    |
+  28.810 [5656] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  31.784 [2194] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  34.758 [1102] |∎∎∎∎∎∎∎∎
+  37.732 [541]  |∎∎∎∎
+  40.706 [227]  |∎∎
+  43.680 [86]   |∎
+  46.653 [63]   |
+  49.627 [17]   |
+  52.601 [8]    |
+  55.575 [5]    |
+
+Latency distribution:
+  10 % in 27.02 ms 
+  25 % in 27.50 ms 
+  50 % in 28.35 ms 
+  75 % in 30.66 ms 
+  90 % in 34.51 ms 
+  95 % in 37.12 ms 
+  99 % in 43.32 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 60; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-60-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.03 s
+  Slowest:	92.45 ms
+  Fastest:	30.92 ms
+  Average:	36.68 ms
+  Requests/sec:	98.97
+
+Response time histogram:
+  30.915 [1]    |
+  37.069 [6647] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  43.222 [2253] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  49.375 [748]  |∎∎∎∎∎
+  55.528 [188]  |∎
+  61.681 [40]   |
+  67.834 [9]    |
+  73.988 [4]    |
+  80.141 [4]    |
+  86.294 [3]    |
+  92.447 [3]    |
+
+Latency distribution:
+  10 % in 32.47 ms 
+  25 % in 33.24 ms 
+  50 % in 34.78 ms 
+  75 % in 38.84 ms 
+  90 % in 43.25 ms 
+  95 % in 46.54 ms 
+  99 % in 53.61 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 70; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-70-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.18 s
+  Slowest:	102.90 ms
+  Fastest:	37.21 ms
+  Average:	49.63 ms
+  Requests/sec:	98.82
+
+Response time histogram:
+  37.215  [1]    |
+  43.783  [3426] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  50.352  [2886] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  56.920  [1631] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  63.489  [966]  |∎∎∎∎∎∎∎∎∎∎∎
+  70.057  [554]  |∎∎∎∎∎∎
+  76.626  [253]  |∎∎∎
+  83.194  [112]  |∎
+  89.762  [53]   |∎
+  96.331  [11]   |
+  102.899 [7]    |
+
+Latency distribution:
+  10 % in 40.19 ms 
+  25 % in 42.30 ms 
+  50 % in 46.87 ms 
+  75 % in 54.41 ms 
+  90 % in 63.49 ms 
+  95 % in 69.19 ms 
+  99 % in 80.64 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 80; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-80-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	112.67 s
+  Slowest:	111.57 ms
+  Fastest:	41.59 ms
+  Average:	55.90 ms
+  Requests/sec:	87.86
+
+Response time histogram:
+  41.593  [1]    |
+  48.591  [2960] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  55.589  [3100] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  62.587  [1587] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  69.585  [1023] |∎∎∎∎∎∎∎∎∎∎∎∎∎
+  76.583  [653]  |∎∎∎∎∎∎∎∎
+  83.581  [341]  |∎∎∎∎
+  90.579  [154]  |∎∎
+  97.577  [52]   |∎
+  104.575 [18]   |
+  111.573 [11]   |
+
+Latency distribution:
+  10 % in 45.41 ms 
+  25 % in 47.78 ms 
+  50 % in 52.48 ms 
+  75 % in 61.41 ms 
+  90 % in 71.76 ms 
+  95 % in 77.84 ms 
+  99 % in 89.26 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 90; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-90-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	126.66 s
+  Slowest:	125.92 ms
+  Fastest:	47.13 ms
+  Average:	62.87 ms
+  Requests/sec:	78.16
+
+Response time histogram:
+  47.127  [1]    |
+  55.006  [3052] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  62.885  [2995] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  70.764  [1711] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  78.644  [997]  |∎∎∎∎∎∎∎∎∎∎∎∎∎
+  86.523  [624]  |∎∎∎∎∎∎∎∎
+  94.402  [312]  |∎∎∎∎
+  102.281 [143]  |∎∎
+  110.160 [45]   |∎
+  118.039 [13]   |
+  125.919 [7]    |
+
+Latency distribution:
+  10 % in 50.95 ms 
+  25 % in 53.78 ms 
+  50 % in 59.59 ms 
+  75 % in 69.02 ms 
+  90 % in 80.16 ms 
+  95 % in 86.85 ms 
+  99 % in 99.78 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	139.30 s
+  Slowest:	131.30 ms
+  Fastest:	52.27 ms
+  Average:	69.17 ms
+  Requests/sec:	71.07
+
+Response time histogram:
+  52.268  [1]    |
+  60.171  [2803] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  68.074  [2917] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  75.977  [1742] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  83.880  [1049] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  91.783  [702]  |∎∎∎∎∎∎∎∎∎∎
+  99.686  [378]  |∎∎∎∎∎
+  107.589 [207]  |∎∎∎
+  115.492 [69]   |∎
+  123.395 [23]   |
+  131.298 [9]    |
+
+Latency distribution:
+  10 % in 56.41 ms 
+  25 % in 59.47 ms 
+  50 % in 65.40 ms 
+  75 % in 75.74 ms 
+  90 % in 87.62 ms 
+  95 % in 94.98 ms 
+  99 % in 107.98 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Change only number of features
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	12.68 ms
+  Fastest:	0.91 ms
+  Average:	1.43 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  0.906  [1]    |
+  2.083  [9886] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.260  [6]    |
+  4.437  [0]    |
+  5.614  [1]    |
+  6.791  [2]    |
+  7.968  [0]    |
+  9.145  [0]    |
+  10.322 [0]    |
+  11.499 [1]    |
+  12.676 [3]    |
+
+Latency distribution:
+  10 % in 1.01 ms 
+  25 % in 1.23 ms 
+  50 % in 1.43 ms 
+  75 % in 1.67 ms 
+  90 % in 1.72 ms 
+  95 % in 1.75 ms 
+  99 % in 1.81 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 100; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-100.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	15.31 ms
+  Fastest:	1.47 ms
+  Average:	2.15 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  1.470  [1]    |
+  2.853  [9855] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  4.237  [30]   |
+  5.621  [5]    |
+  7.004  [5]    |
+  8.388  [0]    |
+  9.771  [1]    |
+  11.155 [2]    |
+  12.539 [0]    |
+  13.922 [0]    |
+  15.306 [1]    |
+
+Latency distribution:
+  10 % in 1.58 ms 
+  25 % in 1.99 ms 
+  50 % in 2.07 ms 
+  75 % in 2.48 ms 
+  90 % in 2.55 ms 
+  95 % in 2.58 ms 
+  99 % in 2.72 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 150; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-150.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	17.74 ms
+  Fastest:	2.11 ms
+  Average:	2.95 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  2.106  [1]    |
+  3.669  [9813] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  5.233  [70]   |
+  6.796  [3]    |
+  8.360  [3]    |
+  9.923  [2]    |
+  11.486 [1]    |
+  13.050 [4]    |
+  14.613 [1]    |
+  16.177 [0]    |
+  17.740 [2]    |
+
+Latency distribution:
+  10 % in 2.26 ms 
+  25 % in 2.65 ms 
+  50 % in 2.92 ms 
+  75 % in 3.33 ms 
+  90 % in 3.41 ms 
+  95 % in 3.46 ms 
+  99 % in 3.63 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 200; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-200.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	18.14 ms
+  Fastest:	2.67 ms
+  Average:	3.71 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  2.675  [1]    |
+  4.221  [8198] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  5.767  [1677] |∎∎∎∎∎∎∎∎
+  7.314  [9]    |
+  8.860  [10]   |
+  10.407 [3]    |
+  11.953 [0]    |
+  13.499 [0]    |
+  15.046 [0]    |
+  16.592 [1]    |
+  18.139 [1]    |
+
+Latency distribution:
+  10 % in 2.85 ms 
+  25 % in 3.24 ms 
+  50 % in 3.76 ms 
+  75 % in 4.18 ms 
+  90 % in 4.27 ms 
+  95 % in 4.36 ms 
+  99 % in 4.55 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.01 s
+  Slowest:	41.89 ms
+  Fastest:	3.27 ms
+  Average:	4.48 ms
+  Requests/sec:	98.99
+
+Response time histogram:
+  3.265  [1]    |
+  7.127  [9876] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  10.989 [12]   |
+  14.852 [4]    |
+  18.714 [3]    |
+  22.576 [1]    |
+  26.438 [0]    |
+  30.300 [1]    |
+  34.162 [1]    |
+  38.024 [0]    |
+  41.886 [1]    |
+
+Latency distribution:
+  10 % in 3.43 ms 
+  25 % in 3.83 ms 
+  50 % in 4.64 ms 
+  75 % in 5.04 ms 
+  90 % in 5.13 ms 
+  95 % in 5.21 ms 
+  99 % in 5.50 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Change only number of requests
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 100
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 100 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	100.00 s
+  Slowest:	13.06 ms
+  Fastest:	0.90 ms
+  Average:	1.43 ms
+  Requests/sec:	99.00
+
+Response time histogram:
+  0.902  [1]    |
+  2.118  [9879] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.334  [12]   |
+  4.551  [2]    |
+  5.767  [1]    |
+  6.983  [1]    |
+  8.200  [0]    |
+  9.416  [0]    |
+  10.632 [0]    |
+  11.849 [1]    |
+  13.065 [3]    |
+
+Latency distribution:
+  10 % in 1.02 ms 
+  25 % in 1.23 ms 
+  50 % in 1.43 ms 
+  75 % in 1.66 ms 
+  90 % in 1.72 ms 
+  95 % in 1.74 ms 
+  99 % in 1.82 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 200
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 200 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	50.00 s
+  Slowest:	14.77 ms
+  Fastest:	0.89 ms
+  Average:	1.39 ms
+  Requests/sec:	197.99
+
+Response time histogram:
+  0.886  [1]    |
+  2.274  [9879] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.662  [5]    |
+  5.051  [5]    |
+  6.439  [1]    |
+  7.828  [2]    |
+  9.216  [1]    |
+  10.604 [3]    |
+  11.993 [2]    |
+  13.381 [0]    |
+  14.769 [1]    |
+
+Latency distribution:
+  10 % in 0.98 ms 
+  25 % in 1.19 ms 
+  50 % in 1.38 ms 
+  75 % in 1.65 ms 
+  90 % in 1.70 ms 
+  95 % in 1.73 ms 
+  99 % in 1.81 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 300
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 300 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	33.34 s
+  Slowest:	27.97 ms
+  Fastest:	0.87 ms
+  Average:	1.42 ms
+  Requests/sec:	296.96
+
+Response time histogram:
+  0.867  [1]    |
+  3.577  [9863] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  6.287  [13]   |
+  8.996  [11]   |
+  11.706 [8]    |
+  14.416 [3]    |
+  17.126 [0]    |
+  19.836 [0]    |
+  22.546 [0]    |
+  25.256 [0]    |
+  27.966 [1]    |
+
+Latency distribution:
+  10 % in 0.98 ms 
+  25 % in 1.20 ms 
+  50 % in 1.40 ms 
+  75 % in 1.64 ms 
+  90 % in 1.70 ms 
+  95 % in 1.72 ms 
+  99 % in 1.87 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 400
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 400 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	25.00 s
+  Slowest:	14.10 ms
+  Fastest:	0.88 ms
+  Average:	1.40 ms
+  Requests/sec:	395.96
+
+Response time histogram:
+  0.880  [1]    |
+  2.202  [9869] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.523  [17]   |
+  4.845  [2]    |
+  6.167  [2]    |
+  7.488  [4]    |
+  8.810  [2]    |
+  10.131 [2]    |
+  11.453 [0]    |
+  12.774 [0]    |
+  14.096 [1]    |
+
+Latency distribution:
+  10 % in 0.97 ms 
+  25 % in 1.19 ms 
+  50 % in 1.40 ms 
+  75 % in 1.64 ms 
+  90 % in 1.69 ms 
+  95 % in 1.71 ms 
+  99 % in 1.88 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 500
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 500 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	20.00 s
+  Slowest:	15.06 ms
+  Fastest:	0.87 ms
+  Average:	1.41 ms
+  Requests/sec:	494.96
+
+Response time histogram:
+  0.871  [1]    |
+  2.290  [9866] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.710  [12]   |
+  5.129  [6]    |
+  6.548  [3]    |
+  7.967  [4]    |
+  9.386  [3]    |
+  10.805 [0]    |
+  12.225 [0]    |
+  13.644 [2]    |
+  15.063 [3]    |
+
+Latency distribution:
+  10 % in 0.98 ms 
+  25 % in 1.20 ms 
+  50 % in 1.39 ms 
+  75 % in 1.64 ms 
+  90 % in 1.70 ms 
+  95 % in 1.74 ms 
+  99 % in 1.94 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 600
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 600 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	16.67 s
+  Slowest:	14.43 ms
+  Fastest:	0.87 ms
+  Average:	1.39 ms
+  Requests/sec:	593.93
+
+Response time histogram:
+  0.869  [1]    |
+  2.225  [9857] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.581  [29]   |
+  4.937  [5]    |
+  6.292  [1]    |
+  7.648  [1]    |
+  9.004  [0]    |
+  10.360 [0]    |
+  11.716 [2]    |
+  13.072 [2]    |
+  14.428 [2]    |
+
+Latency distribution:
+  10 % in 0.97 ms 
+  25 % in 1.18 ms 
+  50 % in 1.37 ms 
+  75 % in 1.63 ms 
+  90 % in 1.69 ms 
+  95 % in 1.74 ms 
+  99 % in 1.99 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 700
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 700 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	14.29 s
+  Slowest:	13.02 ms
+  Fastest:	0.87 ms
+  Average:	1.41 ms
+  Requests/sec:	692.90
+
+Response time histogram:
+  0.866  [1]    |
+  2.082  [9797] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.297  [82]   |
+  4.513  [7]    |
+  5.729  [2]    |
+  6.944  [2]    |
+  8.160  [3]    |
+  9.375  [1]    |
+  10.591 [2]    |
+  11.807 [1]    |
+  13.022 [2]    |
+
+Latency distribution:
+  10 % in 0.97 ms 
+  25 % in 1.19 ms 
+  50 % in 1.39 ms 
+  75 % in 1.64 ms 
+  90 % in 1.71 ms 
+  95 % in 1.76 ms 
+  99 % in 2.10 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 800
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 800 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	12.50 s
+  Slowest:	13.48 ms
+  Fastest:	0.85 ms
+  Average:	1.42 ms
+  Requests/sec:	791.89
+
+Response time histogram:
+  0.850  [1]    |
+  2.114  [9779] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.377  [103]  |
+  4.641  [6]    |
+  5.904  [5]    |
+  7.167  [1]    |
+  8.431  [1]    |
+  9.694  [0]    |
+  10.957 [1]    |
+  12.221 [2]    |
+  13.484 [1]    |
+
+Latency distribution:
+  10 % in 0.98 ms 
+  25 % in 1.19 ms 
+  50 % in 1.41 ms 
+  75 % in 1.65 ms 
+  90 % in 1.72 ms 
+  95 % in 1.77 ms 
+  99 % in 2.18 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 900
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 900 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	11.11 s
+  Slowest:	11.34 ms
+  Fastest:	0.86 ms
+  Average:	1.44 ms
+  Requests/sec:	890.81
+
+Response time histogram:
+  0.858  [1]    |
+  1.906  [9569] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  2.954  [292]  |∎
+  4.001  [20]   |
+  5.049  [4]    |
+  6.097  [4]    |
+  7.144  [3]    |
+  8.192  [2]    |
+  9.240  [1]    |
+  10.287 [3]    |
+  11.335 [1]    |
+
+Latency distribution:
+  10 % in 0.99 ms 
+  25 % in 1.20 ms 
+  50 % in 1.42 ms 
+  75 % in 1.65 ms 
+  90 % in 1.73 ms 
+  95 % in 1.82 ms 
+  99 % in 2.35 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 1000
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 1000 \
+-c 5 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	10.00 s
+  Slowest:	12.58 ms
+  Fastest:	0.85 ms
+  Average:	1.42 ms
+  Requests/sec:	989.67
+
+Response time histogram:
+  0.846  [1]    |
+  2.019  [9686] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  3.192  [195]  |∎
+  4.365  [11]   |
+  5.538  [2]    |
+  6.711  [0]    |
+  7.884  [1]    |
+  9.057  [2]    |
+  10.229 [1]    |
+  11.402 [0]    |
+  12.575 [1]    |
+
+Latency distribution:
+  10 % in 0.98 ms 
+  25 % in 1.20 ms 
+  50 % in 1.41 ms 
+  75 % in 1.65 ms 
+  90 % in 1.73 ms 
+  95 % in 1.81 ms 
+  99 % in 2.27 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Fix uptime to 99.9% with 100ms timeout
+Entity rows: 1; Features: 50; Concurrency: 10; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 0 \
+-c 10 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	2.81 s
+  Slowest:	17.81 ms
+  Fastest:	0.92 ms
+  Average:	2.29 ms
+  Requests/sec:	3519.70
+
+Response time histogram:
+  0.918  [1]    |
+  2.607  [7493] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  4.296  [2118] |∎∎∎∎∎∎∎∎∎∎∎
+  5.985  [231]  |∎
+  7.674  [23]   |
+  9.363  [13]   |
+  11.052 [5]    |
+  12.741 [6]    |
+  14.430 [4]    |
+  16.119 [3]    |
+  17.808 [3]    |
+
+Latency distribution:
+  10 % in 1.47 ms 
+  25 % in 1.74 ms 
+  50 % in 2.06 ms 
+  75 % in 2.58 ms 
+  90 % in 3.34 ms 
+  95 % in 3.87 ms 
+  99 % in 5.23 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 20; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 0 \
+-c 20 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	2.55 s
+  Slowest:	20.79 ms
+  Fastest:	0.97 ms
+  Average:	3.59 ms
+  Requests/sec:	3884.59
+
+Response time histogram:
+  0.969  [1]    |
+  2.952  [4215] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  4.934  [4045] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  6.917  [1189] |∎∎∎∎∎∎∎∎∎∎∎
+  8.899  [291]  |∎∎∎
+  10.881 [96]   |∎
+  12.864 [27]   |
+  14.846 [6]    |
+  16.829 [14]   |
+  18.811 [7]    |
+  20.793 [9]    |
+
+Latency distribution:
+  10 % in 1.85 ms 
+  25 % in 2.38 ms 
+  50 % in 3.20 ms 
+  75 % in 4.30 ms 
+  90 % in 5.68 ms 
+  95 % in 6.75 ms 
+  99 % in 9.83 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 30; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 0 \
+-c 30 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	2.48 s
+  Slowest:	24.81 ms
+  Fastest:	1.00 ms
+  Average:	4.77 ms
+  Requests/sec:	3987.08
+
+Response time histogram:
+  0.996  [1]    |
+  3.377  [3287] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  5.758  [3993] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  8.139  [1745] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  10.520 [547]  |∎∎∎∎∎
+  12.901 [176]  |∎∎
+  15.282 [73]   |∎
+  17.664 [41]   |
+  20.045 [26]   |
+  22.426 [10]   |
+  24.807 [1]    |
+
+Latency distribution:
+  10 % in 2.21 ms 
+  25 % in 3.00 ms 
+  50 % in 4.22 ms 
+  75 % in 5.87 ms 
+  90 % in 7.85 ms 
+  95 % in 9.47 ms 
+  99 % in 14.48 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 40; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 0 \
+-c 40 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	2.55 s
+  Slowest:	48.09 ms
+  Fastest:	0.98 ms
+  Average:	6.23 ms
+  Requests/sec:	3886.22
+
+Response time histogram:
+  0.976  [1]    |
+  5.687  [5200] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  10.399 [3601] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  15.110 [856]  |∎∎∎∎∎∎∎
+  19.822 [154]  |∎
+  24.533 [71]   |∎
+  29.244 [15]   |
+  33.956 [1]    |
+  38.667 [0]    |
+  43.378 [0]    |
+  48.090 [1]    |
+
+Latency distribution:
+  10 % in 2.49 ms 
+  25 % in 3.71 ms 
+  50 % in 5.48 ms 
+  75 % in 7.93 ms 
+  90 % in 10.75 ms 
+  95 % in 12.75 ms 
+  99 % in 19.15 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 50; Concurrency: 50; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-50.json \
+--rps 0 \
+-c 50 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	2.46 s
+  Slowest:	38.60 ms
+  Fastest:	1.00 ms
+  Average:	7.21 ms
+  Requests/sec:	4029.36
+
+Response time histogram:
+  1.004  [1]    |
+  4.763  [3013] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  8.523  [3947] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  12.282 [1849] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  16.041 [786]  |∎∎∎∎∎∎∎∎
+  19.801 [208]  |∎∎
+  23.560 [73]   |∎
+  27.320 [17]   |
+  31.079 [1]    |
+  34.838 [2]    |
+  38.598 [3]    |
+
+Latency distribution:
+  10 % in 2.92 ms 
+  25 % in 4.32 ms 
+  50 % in 6.43 ms 
+  75 % in 9.25 ms 
+  90 % in 12.63 ms 
+  95 % in 14.79 ms 
+  99 % in 19.65 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 10; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 0 \
+-c 10 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	8.97 s
+  Slowest:	33.78 ms
+  Fastest:	3.47 ms
+  Average:	7.90 ms
+  Requests/sec:	1104.04
+
+Response time histogram:
+  3.466  [1]    |
+  6.498  [3548] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  9.529  [4260] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  12.560 [1405] |∎∎∎∎∎∎∎∎∎∎∎∎∎
+  15.591 [467]  |∎∎∎∎
+  18.623 [137]  |∎
+  21.654 [49]   |
+  24.685 [16]   |
+  27.717 [13]   |
+  30.748 [2]    |
+  33.779 [2]    |
+
+Latency distribution:
+  10 % in 5.03 ms 
+  25 % in 5.94 ms 
+  50 % in 7.24 ms 
+  75 % in 9.07 ms 
+  90 % in 11.61 ms 
+  95 % in 13.49 ms 
+  99 % in 17.98 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 20; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 0 \
+-c 20 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	8.78 s
+  Slowest:	51.86 ms
+  Fastest:	3.50 ms
+  Average:	13.23 ms
+  Requests/sec:	1127.15
+
+Response time histogram:
+  3.495  [1]    |
+  8.332  [2051] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  13.169 [3549] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  18.006 [2553] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  22.843 [1080] |∎∎∎∎∎∎∎∎∎∎∎∎
+  27.680 [416]  |∎∎∎∎∎
+  32.516 [163]  |∎∎
+  37.353 [47]   |∎
+  42.190 [23]   |
+  47.027 [12]   |
+  51.864 [5]    |
+
+Latency distribution:
+  10 % in 6.61 ms 
+  25 % in 8.90 ms 
+  50 % in 12.23 ms 
+  75 % in 16.28 ms 
+  90 % in 20.95 ms 
+  95 % in 24.07 ms 
+  99 % in 32.08 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 30; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 0 \
+-c 30 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	8.45 s
+  Slowest:	80.09 ms
+  Fastest:	3.70 ms
+  Average:	17.60 ms
+  Requests/sec:	1171.65
+
+Response time histogram:
+  3.699  [1]    |
+  11.338 [2482] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  18.977 [3802] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  26.616 [2267] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  34.255 [857]  |∎∎∎∎∎∎∎∎∎
+  41.894 [327]  |∎∎∎
+  49.533 [122]  |∎
+  57.172 [35]   |
+  64.811 [5]    |
+  72.450 [1]    |
+  80.089 [1]    |
+
+Latency distribution:
+  10 % in 7.89 ms 
+  25 % in 11.32 ms 
+  50 % in 16.16 ms 
+  75 % in 22.03 ms 
+  90 % in 28.95 ms 
+  95 % in 34.23 ms 
+  99 % in 44.86 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 40; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 0 \
+-c 40 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	8.51 s
+  Slowest:	93.50 ms
+  Fastest:	3.75 ms
+  Average:	22.44 ms
+  Requests/sec:	1163.93
+
+Response time histogram:
+  3.751  [1]    |
+  12.725 [2036] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  21.700 [3358] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  30.675 [2463] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  39.649 [1283] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  48.624 [463]  |∎∎∎∎∎∎
+  57.599 [172]  |∎∎
+  66.573 [85]   |∎
+  75.548 [29]   |
+  84.522 [9]    |
+  93.497 [1]    |
+
+Latency distribution:
+  10 % in 9.61 ms 
+  25 % in 13.82 ms 
+  50 % in 20.48 ms 
+  75 % in 28.74 ms 
+  90 % in 37.64 ms 
+  95 % in 43.46 ms 
+  99 % in 59.02 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 1; Features: 250; Concurrency: 50; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-1-250.json \
+--rps 0 \
+-c 50 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	8.37 s
+  Slowest:	108.40 ms
+  Fastest:	3.72 ms
+  Average:	27.17 ms
+  Requests/sec:	1182.86
+
+Response time histogram:
+  3.717   [1]    |
+  14.185  [1872] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  24.653  [3037] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  35.121  [2491] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  45.589  [1380] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  56.057  [687]  |∎∎∎∎∎∎∎∎∎
+  66.525  [309]  |∎∎∎∎
+  76.993  [95]   |∎
+  87.461  [24]   |
+  97.929  [2]    |
+  108.397 [2]    |
+
+Latency distribution:
+  10 % in 10.91 ms 
+  25 % in 16.41 ms 
+  50 % in 24.78 ms 
+  75 % in 35.25 ms 
+  90 % in 46.93 ms 
+  95 % in 54.68 ms 
+  99 % in 68.26 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 50; Concurrency: 2; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 0 \
+-c 2 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	276.63 s
+  Slowest:	90.86 ms
+  Fastest:	50.27 ms
+  Average:	54.97 ms
+  Requests/sec:	35.79
+
+Response time histogram:
+  50.266 [1]    |
+  54.326 [6796] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  58.385 [1920] |∎∎∎∎∎∎∎∎∎∎∎
+  62.444 [473]  |∎∎∎
+  66.503 [256]  |∎∎
+  70.562 [178]  |∎
+  74.622 [119]  |∎
+  78.681 [107]  |∎
+  82.740 [31]   |
+  86.799 [17]   |
+  90.858 [2]    |
+
+Latency distribution:
+  10 % in 51.94 ms 
+  25 % in 52.43 ms 
+  50 % in 53.23 ms 
+  75 % in 55.35 ms 
+  90 % in 59.51 ms 
+  95 % in 65.65 ms 
+  99 % in 76.69 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 50; Concurrency: 4; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 0 \
+-c 4 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	153.81 s
+  Slowest:	114.31 ms
+  Fastest:	50.86 ms
+  Average:	61.13 ms
+  Requests/sec:	64.37
+
+Response time histogram:
+  50.865  [1]    |
+  57.209  [4695] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  63.553  [2402] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  69.898  [1224] |∎∎∎∎∎∎∎∎∎∎
+  76.242  [787]  |∎∎∎∎∎∎∎
+  82.587  [469]  |∎∎∎∎
+  88.931  [201]  |∎∎
+  95.276  [77]   |∎
+  101.620 [35]   |
+  107.965 [8]    |
+  114.309 [1]    |
+
+Latency distribution:
+  10 % in 53.61 ms 
+  25 % in 54.90 ms 
+  50 % in 57.60 ms 
+  75 % in 65.05 ms 
+  90 % in 74.49 ms 
+  95 % in 79.95 ms 
+  99 % in 90.68 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 50; Concurrency: 6; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 0 \
+-c 6 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	133.73 s
+  Slowest:	168.46 ms
+  Fastest:	52.56 ms
+  Average:	79.58 ms
+  Requests/sec:	74.03
+
+Response time histogram:
+  52.560  [1]    |
+  64.151  [1850] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  75.741  [3104] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  87.331  [2136] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  98.922  [1400] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  110.512 [802]  |∎∎∎∎∎∎∎∎∎∎
+  122.102 [373]  |∎∎∎∎∎
+  133.693 [167]  |∎∎
+  145.283 [50]   |∎
+  156.873 [13]   |
+  168.464 [4]    |
+
+Latency distribution:
+  10 % in 60.52 ms 
+  25 % in 66.54 ms 
+  50 % in 75.72 ms 
+  75 % in 89.58 ms 
+  90 % in 103.90 ms 
+  95 % in 112.91 ms 
+  99 % in 130.80 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 50; Concurrency: 8; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 0 \
+-c 8 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	131.56 s
+  Slowest:	229.33 ms
+  Fastest:	53.74 ms
+  Average:	103.61 ms
+  Requests/sec:	75.25
+
+Response time histogram:
+  53.743  [1]    |
+  71.302  [978]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  88.861  [2323] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  106.420 [2521] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  123.979 [1966] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  141.538 [1165] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  159.097 [592]  |∎∎∎∎∎∎∎∎∎
+  176.656 [243]  |∎∎∎∎
+  194.215 [83]   |∎
+  211.774 [23]   |
+  229.333 [3]    |
+
+Latency distribution:
+  10 % in 71.42 ms 
+  25 % in 83.08 ms 
+  50 % in 100.40 ms 
+  75 % in 119.95 ms 
+  90 % in 140.54 ms 
+  95 % in 153.05 ms 
+  99 % in 177.90 ms 
+
+Status code distribution:
+  [OK]                 9898 responses   
+  [DeadlineExceeded]   2 responses      
+
+Error distribution:
+  [2]   rpc error: code = DeadlineExceeded desc = context deadline exceeded   
+
+Entity rows: 100; Features: 50; Concurrency: 10; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-50.json \
+--rps 0 \
+-c 10 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	131.00 s
+  Slowest:	272.21 ms
+  Fastest:	55.28 ms
+  Average:	127.95 ms
+  Requests/sec:	75.57
+
+Response time histogram:
+  55.280  [1]    |
+  76.974  [502]  |∎∎∎∎∎∎∎∎
+  98.667  [1548] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  120.360 [2366] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  142.054 [2311] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  163.747 [1632] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  185.440 [921]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  207.134 [406]  |∎∎∎∎∎∎∎
+  228.827 [134]  |∎∎
+  250.521 [45]   |∎
+  272.214 [11]   |
+
+Latency distribution:
+  10 % in 85.25 ms 
+  25 % in 103.04 ms 
+  50 % in 124.77 ms 
+  75 % in 150.18 ms 
+  90 % in 174.11 ms 
+  95 % in 189.02 ms 
+  99 % in 219.35 ms 
+
+Status code distribution:
+  [OK]                 9877 responses   
+  [DeadlineExceeded]   22 responses     
+  [Internal]           1 responses      
+
+Error distribution:
+  [22]   rpc error: code = DeadlineExceeded desc = context deadline exceeded   
+  [1]    rpc error: code = Internal desc = unexpected EOF                      
+
+Entity rows: 100; Features: 250; Concurrency: 2; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-250.json \
+--rps 0 \
+-c 2 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	1306.74 s
+  Slowest:	331.08 ms
+  Fastest:	243.18 ms
+  Average:	260.81 ms
+  Requests/sec:	7.58
+
+Response time histogram:
+  243.179 [1]    |
+  251.969 [2812] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  260.760 [3773] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  269.550 [967]  |∎∎∎∎∎∎∎∎∎∎
+  278.340 [1000] |∎∎∎∎∎∎∎∎∎∎∎
+  287.130 [825]  |∎∎∎∎∎∎∎∎∎
+  295.921 [355]  |∎∎∎∎
+  304.711 [122]  |∎
+  313.501 [32]   |
+  322.291 [9]    |
+  331.082 [4]    |
+
+Latency distribution:
+  10 % in 248.97 ms 
+  25 % in 251.48 ms 
+  50 % in 255.35 ms 
+  75 % in 268.40 ms 
+  90 % in 281.88 ms 
+  95 % in 287.52 ms 
+  99 % in 299.90 ms 
+
+Status code distribution:
+  [OK]   9900 responses   
+
+
+Entity rows: 100; Features: 250; Concurrency: 4; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-250.json \
+--rps 0 \
+-c 4 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	724.56 s
+  Slowest:	399.87 ms
+  Fastest:	246.94 ms
+  Average:	289.25 ms
+  Requests/sec:	13.66
+
+Response time histogram:
+  246.939 [1]    |
+  262.232 [1631] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  277.524 [2537] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  292.817 [1588] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  308.110 [1466] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  323.403 [1373] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  338.696 [866]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  353.989 [326]  |∎∎∎∎∎
+  369.282 [81]   |∎
+  384.575 [14]   |
+  399.868 [4]    |
+
+Latency distribution:
+  10 % in 258.71 ms 
+  25 % in 266.57 ms 
+  50 % in 284.08 ms 
+  75 % in 309.96 ms 
+  90 % in 327.40 ms 
+  95 % in 336.93 ms 
+  99 % in 354.07 ms 
+
+Status code distribution:
+  [OK]                 9887 responses   
+  [DeadlineExceeded]   13 responses     
+
+Error distribution:
+  [6]   rpc error: code = DeadlineExceeded desc = stream terminated by RST_STREAM with error code: CANCEL   
+  [7]   rpc error: code = DeadlineExceeded desc = context deadline exceeded                                 
+
+Entity rows: 100; Features: 250; Concurrency: 6; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-250.json \
+--rps 0 \
+-c 6 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	622.53 s
+  Slowest:	547.83 ms
+  Fastest:	261.08 ms
+  Average:	373.22 ms
+  Requests/sec:	15.90
+
+Response time histogram:
+  261.084 [1]    |
+  289.759 [81]   |∎
+  318.434 [760]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  347.109 [1671] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  375.784 [1937] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  404.459 [2215] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  433.133 [1919] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  461.808 [848]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  490.483 [211]  |∎∎∎∎
+  519.158 [22]   |
+  547.833 [2]    |
+
+Latency distribution:
+  10 % in 320.98 ms 
+  25 % in 345.77 ms 
+  50 % in 381.12 ms 
+  75 % in 411.59 ms 
+  90 % in 435.77 ms 
+  95 % in 450.07 ms 
+  99 % in 472.21 ms 
+
+Status code distribution:
+  [Internal]           6 responses      
+  [OK]                 9667 responses   
+  [DeadlineExceeded]   227 responses    
+
+Error distribution:
+  [220]   rpc error: code = DeadlineExceeded desc = context deadline exceeded                                 
+  [6]     rpc error: code = Internal desc = unexpected EOF                                                    
+  [7]     rpc error: code = DeadlineExceeded desc = stream terminated by RST_STREAM with error code: CANCEL   
+
+Entity rows: 100; Features: 250; Concurrency: 8; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-250.json \
+--rps 0 \
+-c 8 \
+localhost:6566
+
+Summary:
+  Count:	9900
+  Total:	519.17 s
+  Slowest:	665.78 ms
+  Fastest:	284.03 ms
+  Average:	415.87 ms
+  Requests/sec:	19.07
+
+Response time histogram:
+  284.032 [1]    |
+  322.207 [12]   |
+  360.382 [133]  |∎∎∎
+  398.557 [492]  |∎∎∎∎∎∎∎∎∎∎
+  436.732 [971]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  474.907 [1595] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  513.082 [2037] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  551.257 [1818] |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  589.432 [803]  |∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  627.607 [171]  |∎∎∎
+  665.782 [26]   |∎
+
+Latency distribution:
+  10 % in 407.14 ms 
+  25 % in 448.12 ms 
+  50 % in 490.49 ms 
+  75 % in 527.10 ms 
+  90 % in 557.12 ms 
+  95 % in 574.23 ms 
+  99 % in 605.60 ms 
+
+Status code distribution:
+  [DeadlineExceeded]   1656 responses   
+  [OK]                 8059 responses   
+  [Internal]           185 responses    
+
+Error distribution:
+  [54]     rpc error: code = DeadlineExceeded desc = stream terminated by RST_STREAM with error code: CANCEL   
+  [1602]   rpc error: code = DeadlineExceeded desc = context deadline exceeded                                 
+  [185]    rpc error: code = Internal desc = unexpected EOF                                                    
+
+Entity rows: 100; Features: 250; Concurrency: 10; RPS: 0
+ghz --insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms \
+-n 10000 \
+--data-file requests-100-250.json \
+--rps 0 \
+-c 10 \
+localhost:6566
