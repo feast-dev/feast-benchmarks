@@ -16,7 +16,7 @@ See [docker install guide](https://docs.docker.com/engine/install/ubuntu/),
 ```
 pip3 install feast[redis]
 
-cd feature_repo; feast apply
+cd feature_repo_redis; feast apply
 ```
 
 3. Start docker compose
@@ -30,7 +30,7 @@ Docker compose will expose too ports:
 4. Generate dataset and write it into online store
 ```
 python data_generator
-cd feature_repo; feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
+cd feature_repo_redis; feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
 ```
 
 5. Generate requests
