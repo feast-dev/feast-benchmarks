@@ -3,7 +3,7 @@ from google.protobuf.duration_pb2 import Duration
 from feast import Entity, Feature, FeatureView, FileSource, ValueType, FeatureService
 
 generated_data_source = FileSource(
-    path="data/generated_data.parquet",
+    path="../generated_data.parquet",
     event_timestamp_column="event_timestamp",
 )
 

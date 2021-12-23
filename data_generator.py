@@ -16,4 +16,4 @@ def generate_data(num_rows: int, num_features: int, key_space: int) -> pd.DataFr
 
 if __name__ == "__main__":
     df = generate_data(10**4, 250, 10**4)
-    df.to_parquet(Path(__file__).parent / "feature_repo/data/generated_data.parquet")
+    df.to_parquet(Path(__file__).parent / "generated_data.parquet")
