@@ -56,14 +56,18 @@ func main() {
 		go worker(i, ctx, client, reqCh, resultCh)
 	}
 
+	start := time.Now()
+
 	run(c, requests, reqCh)
 	
 	close(reqCh)
 	wg.Wait()
 
+	totalTime := float64(time.Since(start)) / float64(time.Second)
+
 	results := make([]float64, 0)
 	for len(resultCh) > 0 {
-  		results = append(results, float64(<-resultCh) / 1000000)
+  		results = append(results, float64(<-resultCh) / float64(time.Millisecond))
 	}
 
 	mean, _ := stats.Mean(results)
@@ -78,7 +82,7 @@ func main() {
 	log.Printf("95p: %fms", p95)
 	p99, _ := stats.Percentile(results, 99)
 	log.Printf("99p: %fms", p99)
-	rps := 1000 / mean * float64(c.Concurrency)
+	rps := float64(c.Requests) / totalTime
 	log.Printf("RPS: %.2f", rps)	
 }
 
