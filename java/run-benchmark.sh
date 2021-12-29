@@ -1,14 +1,17 @@
 #!/bin/bash
 
 
-GHZ_FLAGS=${GHZ_FLAGS:-"--insecure -i protos/ --proto ./protos/ServingService.proto --call feast.serving.ServingService.GetOnlineFeaturesV2 --cpus=4 --skipFirst=100 --timeout=100ms"}
-
 TOTAL_REQUESTS_NUM=${TOTAL_REQUESTS_NUM:-10000}
 UNIQUE_REQUESTS_NUM=${UNIQUE_REQUESTS_NUM:-1000}
-TARGET=${TARGET:-localhost:6566}
-CONCURRENCY=${CONCURRENCY:-5}
+TARGET_HOST=${TARGET_HOST:-localhost}
+TARGET_PORT=${TARGET_PORT:-6566}
+CONCURRENCY=${CONCURRENCY:-4}
 
 trap "exit" INT
+
+export LOAD_FEAST_SERVING_HOST=${TARGET_HOST}
+export LOAD_FEAST_SERVING_PORT=${TARGET_PORT}
+export LOAD_REQUESTS=${TOTAL_REQUESTS_NUM}
 
 single_run() {
 	echo "Entity rows: $1; Features: $2; Concurrency: $3; RPS: $4"
@@ -19,19 +22,11 @@ single_run() {
 		--requests ${UNIQUE_REQUESTS_NUM} \
 		--output requests-$1-$2.json
 
-	echo "ghz ${GHZ_FLAGS} \\
--n ${TOTAL_REQUESTS_NUM} \\
---data-file requests-$1-$2.json \\
---rps $4 \\
--c $3 \\
-$TARGET"
+	export LOAD_REQUESTS_PATH=requests-$1-$2.json
+	export LOAD_CONCURRENCY=$3
+	export LOAD_RPS=$4
 
-	ghz ${GHZ_FLAGS}\
-		-n ${TOTAL_REQUESTS_NUM} \
-		--data-file requests-$1-$2.json \
-		--rps $4 \
-		-c $3 \
-		$TARGET
+	./feast-go-client
 }
 
 
@@ -56,12 +51,12 @@ for i in $(seq 100 100 1000); do single_run 1 50 $CONCURRENCY $i; done
 
 
 
-echo "Fix uptime to 99.9% with 100ms timeout"
+echo "Fix uptime to 99.9% with 100ms timeout and max RPS"
 
-for i in $(seq 10 10 50); do single_run 1 50 $i 0; done
+for i in $(seq 10 10 50); do single_run 1 50 $i 1000; done
 
-for i in $(seq 10 10 50); do single_run 1 250 $i 0; done
+for i in $(seq 10 10 50); do single_run 1 250 $i 1000; done
 
-for i in $(seq 2 2 10); do single_run 100 50 $i 0; done
+for i in $(seq 2 2 10); do single_run 100 50 $i 1000; done
 
-for i in $(seq 2 2 10); do single_run 100 250 $i 0; done
+for i in $(seq 2 2 10); do single_run 100 250 $i 1000; done

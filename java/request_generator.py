@@ -15,24 +15,19 @@ FEATURES_PER_VIEW = 10
 def generate_requests(features, entity_rows, entity_keyspace, requests, project, output):
  	rs = []
  	feature_refs = [
- 		dict(feature_table=f"feature_view_{feature_idx // FEATURES_PER_VIEW}",
- 			 name=f"feature_{feature_idx}")
+ 		f"feature_view_{feature_idx // FEATURES_PER_VIEW}:feature_{feature_idx}"
  		for feature_idx in range(features)
  	]
 
  	for _ in range(requests):
  		entities = [
- 			dict(
- 				fields=dict(
- 					entity=dict(int64_val=int(key))
- 					)
- 				) for key in np.random.randint(1, entity_keyspace, entity_rows)
+ 			dict(int64_val=int(key))		
+ 			for key in np.random.randint(1, entity_keyspace, entity_rows)
  		]
 
  		rs.append(dict(
- 			features=feature_refs,
- 			entity_rows=entities,
- 			project=project
+ 			features={"val": feature_refs},
+ 			entities={"entity": {"val": entities}}
  		))
 
  	with open(output, 'w') as f:

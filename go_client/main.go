@@ -44,7 +44,7 @@ func main() {
 	}
 	client := serving.NewServingServiceClient(conn)
 
-	reqCh := make(chan *serving.GetOnlineFeaturesRequestV2, 0)
+	reqCh := make(chan *serving.GetOnlineFeaturesRequest, 0)
 	resultCh := make(chan time.Duration, c.Requests)
 
 	ctx, _ := context.WithCancel(context.Background())
@@ -78,9 +78,11 @@ func main() {
 	log.Printf("95p: %fms", p95)
 	p99, _ := stats.Percentile(results, 99)
 	log.Printf("99p: %fms", p99)
+	rps := 1000 / mean * float64(c.Concurrency)
+	log.Printf("RPS: %.2f", rps)	
 }
 
-func run(c Config, requests []*serving.GetOnlineFeaturesRequestV2, reqCh chan *serving.GetOnlineFeaturesRequestV2) {
+func run(c Config, requests []*serving.GetOnlineFeaturesRequest, reqCh chan *serving.GetOnlineFeaturesRequest) {
 	ticker := time.NewTicker(time.Duration(1000000 / c.RPS) * time.Microsecond)
 	reqCounter := 0
 	reqIdx := 0
@@ -104,7 +106,7 @@ func run(c Config, requests []*serving.GetOnlineFeaturesRequestV2, reqCh chan *s
 	}
 }
 
-func readRequests(reqPath string) []*serving.GetOnlineFeaturesRequestV2 {
+func readRequests(reqPath string) []*serving.GetOnlineFeaturesRequest {
 	file, err := os.Open(reqPath)
 	if err != nil {
 		log.Fatal(err)
@@ -115,30 +117,32 @@ func readRequests(reqPath string) []*serving.GetOnlineFeaturesRequestV2 {
 		log.Fatal(err)
 	}
 
-	requests := make([]*serving.GetOnlineFeaturesRequestV2, 0)
+	requests := make([]*serving.GetOnlineFeaturesRequest, 0)
 	for jsonDecoder.More() {
-		req := serving.GetOnlineFeaturesRequestV2{}
+		req := serving.GetOnlineFeaturesRequest{}
 		err := jsonpb.UnmarshalNext(jsonDecoder, &req)
 		if err != nil {
 			log.Fatal(err)
 		}
 		requests = append(requests, &req)
 	}
-	//println(proto.MarshalTextString(requests[2]))
-	//println(len(requests))
 	return requests
 }
 
-func worker(workerId int, ctx context.Context, client serving.ServingServiceClient, reqCh <-chan *serving.GetOnlineFeaturesRequestV2, resultCh chan time.Duration) {
+func worker(workerId int, ctx context.Context, client serving.ServingServiceClient, reqCh <-chan *serving.GetOnlineFeaturesRequest, resultCh chan time.Duration) {
 	defer wg.Done()
 
 	for req := range reqCh {
 		//log.Printf("Sending request. WorkerId %d", workerId)
 		start := time.Now()
 
-		_, err := client.GetOnlineFeaturesV2(ctx, req)
+		//_, err := client.GetOnlineFeatures(ctx, req)
+		client.GetOnlineFeatures(ctx, req)
 		duration := time.Since(start)
-		log.Printf("Retrieval %s; Success: %t. WorkerId: %d", duration, err == nil, workerId)
+
+		//println(prototext.Format(resp))
+
+		//log.Printf("Retrieval %s; Success: %t. WorkerId: %d", duration, err == nil, workerId)
 	
 		resultCh <- duration
 	}
