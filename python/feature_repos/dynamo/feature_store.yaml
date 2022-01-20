@@ -1,0 +1,11 @@
+registry: data/registry.db
+project: feature_repo
+provider: aws
+online_store:
+  type: dynamodb
+  region: us-west-2
+offline_store:
+  type: file
+flags:
+  alpha_features: true
+  python_feature_server: true

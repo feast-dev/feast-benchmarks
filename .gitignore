@@ -2,3 +2,4 @@ generated_data.parquet
 online_store.db
 registry.db
 venv
+requests*.json

@@ -6,7 +6,7 @@ services:
       - "6566:6566"
     volumes:
       - ./config:/etc/feast
-      - ../feature_repo_redis/data:/data
+      - ./feature_repos/redis/data:/data
     command:
       - java
       - -jar
