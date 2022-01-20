@@ -7,6 +7,7 @@ NUM_SERVERS=${NUM_SERVERS:-8}
 CONCURRENCY=${CONCURRENCY:-5}
 RUN_TIME=${RUN_TIME:-5s}
 WAIT_TIME=${WAIT_TIME:-1}
+REQUEST_TIMEOUT=${REQUEST_TIMEOUT:-5s}
 
 trap "exit" INT
 
@@ -21,9 +22,9 @@ single_run() {
 		--requests ${UNIQUE_REQUESTS_NUM} \
 		--output requests-$1-$2.json
 
-	echo "vegeta attack -format json -targets requests-$1-$2.json -connections $3 -duration ${RUN_TIME} -rate $4/1s | vegeta report"
+	echo "vegeta attack -format json -targets requests-$1-$2.json -connections $3 -duration ${RUN_TIME} -rate $4/1s -timeout ${REQUEST_TIMEOUT} | vegeta report"
 
-	vegeta attack -format json -targets requests-$1-$2.json -connections $3 -duration ${RUN_TIME} -rate $4/1s | vegeta report
+	vegeta attack -format json -targets requests-$1-$2.json -connections $3 -duration ${RUN_TIME} -rate $4/1s -timeout ${REQUEST_TIMEOUT} | vegeta report
 
 	sleep ${WAIT_TIME}
 }
