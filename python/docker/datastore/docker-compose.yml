@@ -2,12 +2,8 @@ services:
   feast:
     build:
       context: ../..
-      dockerfile: docker/redis/Dockerfile
+      dockerfile: docker/datastore/Dockerfile
     ports:
       - "6566-6581:6566"
     deploy:
       replicas: 16
-    links:
-      - redis
-  redis:
-    image: redis
