@@ -53,6 +53,7 @@ Creating redis_feast_16 ... done
 cd ../../feature_repos/redis
 sed -i 's/redis:6379/localhost:6379/g' feature_store.yaml # this is unfortunately necessary because inside docker feature servers resolve Redis host name as `redis`, but since we're running materialization from shell, Redis is accessible on localhost.
 feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
+sed -i 's/localhost:6379/redis:6379/g' feature_store.yaml # make sure to change this back, since it can mess up with feature servers if you run another docker-compose command later. 
 ```
 
 4. Run Benchmarks
