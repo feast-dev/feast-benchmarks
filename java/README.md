@@ -6,39 +6,45 @@ docker-compose
 python3
 python3-pip
 
-ghz
+golang >= 1.17
 ```
 
-See [docker install guide](https://docs.docker.com/engine/install/ubuntu/),
-[docker-compose install guide](https://docs.docker.com/compose/install/) and [ghz install guide](https://ghz.sh/docs/install) to install latest versions.
+See [docker install guide](https://docs.docker.com/engine/install/ubuntu/) and
+[docker-compose install guide](https://docs.docker.com/compose/install/) to install latest versions.
 
-2. Prepare feature repo
+2. Build Feast Go Benchmark Client
 ```
-pip3 install feast[redis]
+cd go_client/ && go build -o feast-go-client && cd -
+cp go_client/feast-go-client java/
+```
 
-cd feature_repo_redis; feast apply
+3. Prepare feature repo
+```
+pip3 install 'feast[redis]'
+
+cd java/feature_repos/redis && feast apply && cd -
 ```
 
-3. Start docker compose
+4. Start docker compose
 ```
-cd java; docker-compose up -d
+cd java && docker-compose up -d && cd -
 ```
 Docker compose will expose too ports:
 * 16379 - redis
 * 6566 - Feast feature server
 
-4. Generate dataset and write it into online store
+5. Generate dataset and write it into online store
 ```
-python data_generator
-cd feature_repo_redis; feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
-```
-
-5. Generate requests
-```
-cd java; python request_generator --output requests.json
+python data_generator.py
+cd java/feature_repos/redis && feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S") && cd -
 ```
 
 6. Run benchmark
 ```
-ghz --insecure -i protos/ --proto ./protos/ServingService.proto --data-file requests.json --call feast.serving.ServingService.GetOnlineFeaturesV2 -n 10000 -c 5 localhost:6566
+cd java && ./run-benchmark.sh
 ```
+
+### Results
+
+We ran this benchmark on single EC2 machine (c5.4xlarge) with 16 vCPU.
+Results are provided in [this spreadsheet](https://docs.google.com/spreadsheets/d/1MOW-Qccd-zCJ-3i_WL88sJFWWkjyiVtKXO0c7yHmjzk/edit?usp=sharing).
