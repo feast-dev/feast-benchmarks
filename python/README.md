@@ -59,7 +59,7 @@ sed -i 's/localhost:6379/redis:6379/g' feature_store.yaml # make sure to change 
 4. Run Benchmarks
 ```
 cd ../..
-RUN_TIME=1m ./run-benchmark.sh
+./run-benchmark.sh
 ```
 
 ## AWS DynamoDB
