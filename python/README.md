@@ -181,7 +181,83 @@ cd python
 ./run-benchmark.sh
 ```
 
-
 ## GCP Datastore
 
-TODO
+1. Apply feature definitions to create a Feast repo.
+```
+cd feature_repos/datastore
+feast apply
+```
+
+2. Deploy feature servers using docker-compose
+```
+cd ../../docker/datastore
+docker-compose up -d
+```
+If everything goes well, you should see an output like this:
+```
+Creating datastore_feast_1  ... done
+Creating datastore_feast_2  ... done
+Creating datastore_feast_3  ... done
+Creating datastore_feast_4  ... done
+Creating datastore_feast_5  ... done
+Creating datastore_feast_6  ... done
+Creating datastore_feast_7  ... done
+Creating datastore_feast_8  ... done
+Creating datastore_feast_9  ... done
+Creating datastore_feast_10 ... done
+Creating datastore_feast_11 ... done
+Creating datastore_feast_12 ... done
+Creating datastore_feast_13 ... done
+Creating datastore_feast_14 ... done
+Creating datastore_feast_15 ... done
+Creating datastore_feast_16 ... done
+```
+
+3. Materialize data to Datastore
+```
+cd ../../feature_repos/datastore
+feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
+```
+
+4. Check that feature servers are working & they have materialized data
+```
+cd ../../..
+parquet-tools show --columns entity generated_data.parquet 2>/dev/null | head -n 6
+```
+This should return something like this:
+```
++----------+
+|   entity |
+|----------|
+|       94 |
+|     1992 |
+|     4475 |
+```
+Take your 3 numbers and replace in this query:
+```
+curl -X POST \
+  "http://127.0.0.1:6566/get-online-features" \
+  -H "accept: application/json" \
+  -d '{
+    "feature_service": "feature_service_0",
+    "entities": {
+      "entity": [94, 1992, 4475]
+    }
+  }' | jq
+```
+
+In the output, make sure that `"values"` field contains none of the null values. It should look something like this:
+```
+    {
+      "values": [
+        4475,
+        1551,
+        9889,        
+```
+
+5. Run Benchmarks
+```
+cd python
+./run-benchmark.sh
+```
