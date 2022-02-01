@@ -171,8 +171,8 @@ Error Set:
 Entity rows: 1; Features: 100; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-100.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.01
-Duration      [total, attack, wait]             59.954s, 59.9s, 53.757ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  42.188ms, 141.769ms, 56.614ms, 368.845ms, 835.793ms, 1.266s, 1.605s
+Duration      [total, attack, wait]             59.954s, 59.9s, 53.603ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  43.245ms, 55.226ms, 52.256ms, 66.988ms, 78.096ms, 96.772ms, 113.689ms
 Bytes In      [total, mean]                     3434791, 5724.65
 Bytes Out     [total, mean]                     43138, 71.90
 Success       [ratio]                           100.00%
