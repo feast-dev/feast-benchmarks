@@ -1,11 +1,12 @@
 from datetime import datetime
-from example import feature_views, feature_services
+from example import entity, feature_views, feature_services
 from feast import FeatureStore
 
 def main():
 
     fs = FeatureStore(repo_path=".")
 
+    fs.apply([entity])
     [fs.apply([fv]) for fv in feature_views]
     [fs.apply([fv]) for fv in feature_services]
 
