@@ -6,8 +6,8 @@ def main():
 
     fs = FeatureStore(repo_path=".")
 
-    [fs.apply([fv]) for feature_view in feature_views]
-    [fs.apply([fv]) for feature_view in feature_services]
+    [fs.apply([fv]) for fv in feature_views]
+    [fs.apply([fv]) for fv in feature_services]
 
     fs.materialize_incremental(end_date=datetime.now())
 
