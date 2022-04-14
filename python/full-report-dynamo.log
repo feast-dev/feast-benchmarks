@@ -2,930 +2,592 @@ Change only number of rows
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.01
-Duration      [total, attack, wait]             59.929s, 59.9s, 29.468ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  23.575ms, 30.921ms, 27.873ms, 38.102ms, 50.573ms, 67.453ms, 89.243ms
-Bytes In      [total, mean]                     1760343, 2933.91
+Duration      [total, attack, wait]             59.932s, 59.9s, 31.883ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.964ms, 35.541ms, 32.496ms, 41.841ms, 60.425ms, 77.473ms, 84.983ms
+Bytes In      [total, mean]                     3172068, 5286.78
 Bytes Out     [total, mean]                     43129, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 10; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-10-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.98
-Duration      [total, attack, wait]             1m0s, 59.9s, 239.23ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  191.15ms, 240.508ms, 233.708ms, 276.208ms, 289.514ms, 328.729ms, 348.021ms
-Bytes In      [total, mean]                     14630859, 24384.76
-Bytes Out     [total, mean]                     74955, 124.92
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.05
+Duration      [total, attack, wait]             59.913s, 59.9s, 13.028ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  11.491ms, 14.14ms, 12.986ms, 14.979ms, 18.93ms, 41.148ms, 75.217ms
+Bytes In      [total, mean]                     143428, 239.05
+Bytes Out     [total, mean]                     74939, 124.90
+Success       [ratio]                           0.50%
+Status Codes  [code:count]                      200:3  500:597  
 Error Set:
+500 Internal Server Error
 Entity rows: 20; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-20-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.93
-Duration      [total, attack, wait]             1m0s, 59.9s, 494.174ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  377.881ms, 495.415ms, 489.112ms, 557.517ms, 585.863ms, 638.009ms, 700.984ms
-Bytes In      [total, mean]                     28826108, 48043.51
-Bytes Out     [total, mean]                     110265, 183.78
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.914s, 59.9s, 14.11ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  13.028ms, 15.712ms, 14.753ms, 17.29ms, 19.42ms, 41.303ms, 62.611ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     110281, 183.80
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 30; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-30-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.91
-Duration      [total, attack, wait]             1m1s, 59.9s, 665.831ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  583.709ms, 766.892ms, 755.631ms, 861.532ms, 894.267ms, 1.093s, 1.329s
-Bytes In      [total, mean]                     43048641, 71747.74
-Bytes Out     [total, mean]                     145661, 242.77
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.93s, 59.9s, 30.128ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  14.537ms, 17.745ms, 16.298ms, 20.011ms, 24.498ms, 42.833ms, 68.463ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     145615, 242.69
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 40; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-40-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.83
-Duration      [total, attack, wait]             1m1s, 59.9s, 1.132s
-Latencies     [min, mean, 50, 90, 95, 99, max]  786.797ms, 1.09s, 1.06s, 1.287s, 1.388s, 1.549s, 1.808s
-Bytes In      [total, mean]                     57253426, 95422.38
-Bytes Out     [total, mean]                     181013, 301.69
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.918s, 59.9s, 17.544ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  16.155ms, 19.902ms, 18.35ms, 21.774ms, 24.79ms, 69.58ms, 80.124ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     180896, 301.49
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 50; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-50-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.82
-Duration      [total, attack, wait]             1m1s, 59.9s, 1.225s
-Latencies     [min, mean, 50, 90, 95, 99, max]  1.096s, 1.351s, 1.347s, 1.49s, 1.544s, 1.771s, 1.873s
-Bytes In      [total, mean]                     71473720, 119122.87
-Bytes Out     [total, mean]                     216305, 360.51
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.925s, 59.9s, 25.508ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  21.434ms, 25.853ms, 24.321ms, 28.28ms, 32.522ms, 69.28ms, 90.533ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     216266, 360.44
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 60; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-60-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.72
-Duration      [total, attack, wait]             1m2s, 59.9s, 1.829s
-Latencies     [min, mean, 50, 90, 95, 99, max]  1.339s, 1.833s, 1.841s, 2.134s, 2.216s, 2.437s, 2.89s
-Bytes In      [total, mean]                     85667111, 142778.52
-Bytes Out     [total, mean]                     251658, 419.43
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.926s, 59.9s, 26.455ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  23.001ms, 28.442ms, 26.137ms, 31.521ms, 38.017ms, 83.226ms, 88.469ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     251555, 419.26
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 70; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-70-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 9.69
-Duration      [total, attack, wait]             1m2s, 59.9s, 2.049s
-Latencies     [min, mean, 50, 90, 95, 99, max]  1.567s, 2.425s, 2.433s, 2.643s, 2.731s, 3.004s, 3.891s
-Bytes In      [total, mean]                     99875706, 166459.51
-Bytes Out     [total, mean]                     286898, 478.16
-Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.927s, 59.9s, 27.05ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  24.044ms, 29.755ms, 27.474ms, 32.939ms, 38.019ms, 83.972ms, 91.085ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     286819, 478.03
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
+500 Internal Server Error
 Entity rows: 80; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-80-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 2.57
-Duration      [total, attack, wait]             1m5s, 59.9s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  1.987s, 4.613s, 5s, 5s, 5s, 5s, 5s
-Bytes In      [total, mean]                     31749950, 52916.58
-Bytes Out     [total, mean]                     89691, 149.49
-Success       [ratio]                           27.83%
-Status Codes  [code:count]                      0:433  200:167
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.928s, 59.9s, 27.944ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  25.555ms, 32.3ms, 29.635ms, 37.524ms, 46.198ms, 84.009ms, 94.736ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     322241, 537.07
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 90; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-90-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 0.09
-Duration      [total, attack, wait]             1m5s, 59.9s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  3.201s, 4.992s, 5s, 5s, 5s, 5s, 5.002s
-Bytes In      [total, mean]                     1282779, 2137.97
-Bytes Out     [total, mean]                     3574, 5.96
-Success       [ratio]                           1.00%
-Status Codes  [code:count]                      0:594  200:6
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.934s, 59.9s, 33.528ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  31.422ms, 38.545ms, 35.707ms, 43.725ms, 53.977ms, 92.481ms, 126.866ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     357576, 595.96
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.9s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.009s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             59.935s, 59.9s, 35.37ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.776ms, 40.75ms, 37.514ms, 47.064ms, 56.575ms, 98.303ms, 142.451ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     393040, 655.07
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:600
+Status Codes  [code:count]                      500:600  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Change only number of features
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.01
-Duration      [total, attack, wait]             59.927s, 59.9s, 26.82ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  23.22ms, 28.681ms, 26.865ms, 34.575ms, 40.031ms, 54.675ms, 66.936ms
-Bytes In      [total, mean]                     1757637, 2929.39
-Bytes Out     [total, mean]                     43136, 71.89
+Duration      [total, attack, wait]             59.934s, 59.9s, 34.538ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.947ms, 34.807ms, 32.583ms, 38.59ms, 45.525ms, 78.347ms, 142.249ms
+Bytes In      [total, mean]                     3165926, 5276.54
+Bytes Out     [total, mean]                     43120, 71.87
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 100; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-100.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 10.01
-Duration      [total, attack, wait]             59.954s, 59.9s, 53.603ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  43.245ms, 55.226ms, 52.256ms, 66.988ms, 78.096ms, 96.772ms, 113.689ms
-Bytes In      [total, mean]                     3434791, 5724.65
-Bytes Out     [total, mean]                     43138, 71.90
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             59.97s, 59.9s, 70.171ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  50.569ms, 62.984ms, 59.784ms, 72.256ms, 80.811ms, 114.252ms, 136.457ms
+Bytes In      [total, mean]                     6263101, 10438.50
+Bytes Out     [total, mean]                     43126, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 150; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-150.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.00
-Duration      [total, attack, wait]             59.979s, 59.9s, 78.977ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  60.998ms, 81.386ms, 76.976ms, 103.187ms, 116.88ms, 149.356ms, 183.969ms
-Bytes In      [total, mean]                     5154615, 8591.02
-Bytes Out     [total, mean]                     43126, 71.88
+Duration      [total, attack, wait]             59.99s, 59.9s, 90.303ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  75.504ms, 92.572ms, 88.943ms, 109.537ms, 121.341ms, 144.521ms, 186.531ms
+Bytes In      [total, mean]                     9378046, 15630.08
+Bytes Out     [total, mean]                     43150, 71.92
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 200; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-200.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.00
-Duration      [total, attack, wait]             1m0s, 59.9s, 117.895ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  80.254ms, 112.663ms, 104.371ms, 140.766ms, 155.619ms, 213.7ms, 1.004s
-Bytes In      [total, mean]                     6884942, 11474.90
-Bytes Out     [total, mean]                     43139, 71.90
+Duration      [total, attack, wait]             1m0s, 59.9s, 112.283ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  98.841ms, 123.391ms, 117.168ms, 149.357ms, 166.439ms, 204.371ms, 338.602ms
+Bytes In      [total, mean]                     12497506, 20829.18
+Bytes Out     [total, mean]                     43140, 71.90
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 9.99
-Duration      [total, attack, wait]             1m0s, 59.9s, 137.461ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  98.675ms, 134.129ms, 130.768ms, 166.683ms, 180.978ms, 207.63ms, 231.541ms
-Bytes In      [total, mean]                     8584892, 14308.15
-Bytes Out     [total, mean]                     43146, 71.91
+Duration      [total, attack, wait]             1m0s, 59.9s, 156.011ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  120.765ms, 146.31ms, 141.809ms, 170.908ms, 185.781ms, 206.373ms, 236.111ms
+Bytes In      [total, mean]                     15661748, 26102.91
+Bytes Out     [total, mean]                     43129, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Change only number of requests
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 10.01
-Duration      [total, attack, wait]             59.928s, 59.9s, 27.604ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.741ms, 30.528ms, 28.461ms, 38.486ms, 44.967ms, 62.152ms, 80.317ms
-Bytes In      [total, mean]                     1765238, 2942.06
-Bytes Out     [total, mean]                     43114, 71.86
+Duration      [total, attack, wait]             59.935s, 59.9s, 34.624ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  28.417ms, 33.145ms, 32.076ms, 36.914ms, 39.42ms, 59.18ms, 81.655ms
+Bytes In      [total, mean]                     3168647, 5281.08
+Bytes Out     [total, mean]                     43125, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 20
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         1200, 20.02, 20.01
-Duration      [total, attack, wait]             59.982s, 59.95s, 32.502ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.743ms, 29.861ms, 27.554ms, 37.283ms, 42.56ms, 66.24ms, 84.589ms
-Bytes In      [total, mean]                     3518587, 2932.16
-Bytes Out     [total, mean]                     86257, 71.88
+Duration      [total, attack, wait]             59.981s, 59.95s, 30.918ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.743ms, 33.152ms, 31.778ms, 36.998ms, 40.125ms, 65.602ms, 80.18ms
+Bytes In      [total, mean]                     6334907, 5279.09
+Bytes Out     [total, mean]                     86280, 71.90
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:1200
+Status Codes  [code:count]                      200:1200  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 30
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         1800, 30.02, 30.00
-Duration      [total, attack, wait]             59.992s, 59.967s, 25.116ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.604ms, 30.278ms, 28.028ms, 37.326ms, 41.891ms, 62.286ms, 259.089ms
-Bytes In      [total, mean]                     5285280, 2936.27
-Bytes Out     [total, mean]                     129389, 71.88
+Requests      [total, rate, throughput]         1800, 30.02, 29.99
+Duration      [total, attack, wait]             1m0s, 59.967s, 50.522ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.14ms, 33.963ms, 32.248ms, 38.672ms, 43.662ms, 66.566ms, 89.237ms
+Bytes In      [total, mean]                     9507739, 5282.08
+Bytes Out     [total, mean]                     129404, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:1800
+Status Codes  [code:count]                      200:1800  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 40
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         2400, 40.02, 40.00
-Duration      [total, attack, wait]             59.999s, 59.975s, 24.248ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.788ms, 30.327ms, 28.052ms, 37.135ms, 42.75ms, 66.139ms, 483.928ms
-Bytes In      [total, mean]                     7040006, 2933.34
-Bytes Out     [total, mean]                     172480, 71.87
+Duration      [total, attack, wait]             1m0s, 59.975s, 31.253ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.218ms, 33.934ms, 32.449ms, 38.041ms, 42.067ms, 67.507ms, 94.574ms
+Bytes In      [total, mean]                     12674912, 5281.21
+Bytes Out     [total, mean]                     172530, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:2400
+Status Codes  [code:count]                      200:2400  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 50
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         3000, 50.02, 49.99
-Duration      [total, attack, wait]             1m0s, 59.98s, 26.612ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.611ms, 30.364ms, 28.381ms, 37.303ms, 42.716ms, 62.809ms, 253.632ms
-Bytes In      [total, mean]                     8792561, 2930.85
-Bytes Out     [total, mean]                     215663, 71.89
+Requests      [total, rate, throughput]         3000, 50.02, 49.98
+Duration      [total, attack, wait]             1m0s, 59.98s, 41.233ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.523ms, 33.506ms, 32.243ms, 37.301ms, 40.07ms, 63.77ms, 89.483ms
+Bytes In      [total, mean]                     15862422, 5287.47
+Bytes Out     [total, mean]                     215682, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:3000
+Status Codes  [code:count]                      200:3000  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 60
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         3600, 60.02, 59.98
-Duration      [total, attack, wait]             1m0s, 59.983s, 31.849ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.458ms, 29.739ms, 27.941ms, 36.095ms, 40.125ms, 59.223ms, 241.473ms
-Bytes In      [total, mean]                     10541077, 2928.08
-Bytes Out     [total, mean]                     258872, 71.91
+Duration      [total, attack, wait]             1m0s, 59.983s, 32.606ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.643ms, 33.9ms, 32.544ms, 38.207ms, 41.4ms, 67.24ms, 113.839ms
+Bytes In      [total, mean]                     19033037, 5286.95
+Bytes Out     [total, mean]                     258780, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:3600
+Status Codes  [code:count]                      200:3600  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 70
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4200, 70.02, 69.98
-Duration      [total, attack, wait]             1m0s, 59.986s, 35.111ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.956ms, 30.702ms, 28.228ms, 37.394ms, 42.969ms, 64.55ms, 310.116ms
-Bytes In      [total, mean]                     12314379, 2931.99
-Bytes Out     [total, mean]                     301966, 71.90
+Duration      [total, attack, wait]             1m0s, 59.986s, 33.293ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.331ms, 34.794ms, 33.121ms, 39.483ms, 43.926ms, 68.733ms, 179.843ms
+Bytes In      [total, mean]                     22211194, 5288.38
+Bytes Out     [total, mean]                     301950, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:4200
+Status Codes  [code:count]                      200:4200  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 80
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         4800, 80.02, 79.98
-Duration      [total, attack, wait]             1m0s, 59.987s, 25.91ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.794ms, 29.326ms, 27.567ms, 34.888ms, 39.518ms, 60.616ms, 310.033ms
-Bytes In      [total, mean]                     14082266, 2933.81
-Bytes Out     [total, mean]                     344995, 71.87
+Requests      [total, rate, throughput]         4800, 80.02, 79.97
+Duration      [total, attack, wait]             1m0s, 59.987s, 33.943ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.791ms, 34.673ms, 32.899ms, 39.252ms, 44.798ms, 72.835ms, 176.228ms
+Bytes In      [total, mean]                     25372434, 5285.92
+Bytes Out     [total, mean]                     345114, 71.90
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:4800
+Status Codes  [code:count]                      200:4800  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 90
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         5400, 90.02, 89.95
-Duration      [total, attack, wait]             1m0s, 59.989s, 43.833ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.674ms, 29.757ms, 27.764ms, 36.082ms, 40.954ms, 61.657ms, 243.48ms
-Bytes In      [total, mean]                     15801040, 2926.12
-Bytes Out     [total, mean]                     388157, 71.88
+Requests      [total, rate, throughput]         5400, 90.02, 89.97
+Duration      [total, attack, wait]             1m0s, 59.989s, 32.077ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.596ms, 34.636ms, 33.051ms, 39.091ms, 42.416ms, 70.525ms, 245.311ms
+Bytes In      [total, mean]                     28522529, 5281.95
+Bytes Out     [total, mean]                     388186, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:5400
+Status Codes  [code:count]                      200:5400  
 Error Set:
 Entity rows: 1; Features: 50; Concurrency: 5; RPS: 100
 vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         6000, 100.02, 99.97
-Duration      [total, attack, wait]             1m0s, 59.99s, 28.603ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  22.48ms, 30.251ms, 28.241ms, 36.832ms, 41.733ms, 64.438ms, 254.575ms
-Bytes In      [total, mean]                     17590204, 2931.70
-Bytes Out     [total, mean]                     431262, 71.88
+Requests      [total, rate, throughput]         6000, 100.02, 99.96
+Duration      [total, attack, wait]             1m0s, 59.99s, 32.678ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  27.314ms, 34.715ms, 33.078ms, 38.84ms, 42.529ms, 67.983ms, 276.079ms
+Bytes In      [total, mean]                     31663900, 5277.32
+Bytes Out     [total, mean]                     431208, 71.87
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:6000
+Status Codes  [code:count]                      200:6000  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 9.99
-Duration      [total, attack, wait]             1m0s, 59.9s, 158.093ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  94.249ms, 127.897ms, 123.686ms, 154.769ms, 166.886ms, 194.824ms, 391.015ms
-Bytes In      [total, mean]                     8588749, 14314.58
-Bytes Out     [total, mean]                     43147, 71.91
+Duration      [total, attack, wait]             1m0s, 59.9s, 158.067ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  121.989ms, 146.315ms, 141.05ms, 174.195ms, 185.744ms, 202.218ms, 235.094ms
+Bytes In      [total, mean]                     15626141, 26043.57
+Bytes Out     [total, mean]                     43145, 71.91
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:600
+Status Codes  [code:count]                      200:600  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 20
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         1200, 20.02, 19.97
-Duration      [total, attack, wait]             1m0s, 59.95s, 148.619ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  94.134ms, 130.815ms, 123.955ms, 157.258ms, 170.318ms, 224.109ms, 1.437s
-Bytes In      [total, mean]                     17170926, 14309.10
-Bytes Out     [total, mean]                     86279, 71.90
+Requests      [total, rate, throughput]         1200, 20.02, 19.98
+Duration      [total, attack, wait]             1m0s, 59.95s, 122.812ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  120.263ms, 149.228ms, 143.158ms, 178.134ms, 192.556ms, 219.6ms, 417.192ms
+Bytes In      [total, mean]                     31264821, 26054.02
+Bytes Out     [total, mean]                     86262, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:1200
+Status Codes  [code:count]                      200:1200  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 30
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         1800, 30.02, 29.93
-Duration      [total, attack, wait]             1m0s, 59.967s, 173.001ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  94.847ms, 130.795ms, 125.606ms, 161.522ms, 176.204ms, 218.988ms, 338.262ms
-Bytes In      [total, mean]                     25713074, 14285.04
-Bytes Out     [total, mean]                     129396, 71.89
+Requests      [total, rate, throughput]         1800, 30.02, 29.94
+Duration      [total, attack, wait]             1m0s, 59.967s, 144.9ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  123.767ms, 151.253ms, 146.227ms, 179.98ms, 192.223ms, 217.276ms, 354.402ms
+Bytes In      [total, mean]                     46845996, 26025.55
+Bytes Out     [total, mean]                     129415, 71.90
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:1800
+Status Codes  [code:count]                      200:1800  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 40
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         2400, 40.02, 39.93
-Duration      [total, attack, wait]             1m0s, 59.975s, 125.645ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  95.803ms, 131.199ms, 127.059ms, 160.386ms, 173.917ms, 195.494ms, 233.98ms
-Bytes In      [total, mean]                     34373206, 14322.17
-Bytes Out     [total, mean]                     172566, 71.90
+Requests      [total, rate, throughput]         2400, 40.02, 39.91
+Duration      [total, attack, wait]             1m0s, 59.975s, 158.891ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  124.27ms, 156.6ms, 151.293ms, 186.153ms, 199.28ms, 227.712ms, 276.937ms
+Bytes In      [total, mean]                     62571381, 26071.41
+Bytes Out     [total, mean]                     172503, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:2400
+Status Codes  [code:count]                      200:2400  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 50
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         3000, 50.02, 49.85
-Duration      [total, attack, wait]             1m0s, 59.98s, 202.933ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  94.925ms, 141.335ms, 133.889ms, 171.616ms, 190.936ms, 253.522ms, 1.273s
-Bytes In      [total, mean]                     42905085, 14301.69
-Bytes Out     [total, mean]                     215646, 71.88
+Requests      [total, rate, throughput]         3000, 50.02, 49.90
+Duration      [total, attack, wait]             1m0s, 59.98s, 145.243ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  126.554ms, 162.531ms, 157.08ms, 193.852ms, 211.619ms, 244.435ms, 396.893ms
+Bytes In      [total, mean]                     78164418, 26054.81
+Bytes Out     [total, mean]                     215625, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:3000
+Status Codes  [code:count]                      200:3000  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 60
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         3600, 60.02, 59.89
-Duration      [total, attack, wait]             1m0s, 59.983s, 130.758ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  95.78ms, 138.457ms, 133.879ms, 171.265ms, 183.406ms, 216.13ms, 368.672ms
-Bytes In      [total, mean]                     51387687, 14274.36
-Bytes Out     [total, mean]                     258858, 71.91
+Requests      [total, rate, throughput]         3600, 60.02, 59.86
+Duration      [total, attack, wait]             1m0s, 59.983s, 160.001ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  129.795ms, 168.778ms, 163.101ms, 200.26ms, 218.469ms, 249.552ms, 417.652ms
+Bytes In      [total, mean]                     93769200, 26047.00
+Bytes Out     [total, mean]                     258789, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:3600
+Status Codes  [code:count]                      200:3600  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 70
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4200, 70.02, 69.85
-Duration      [total, attack, wait]             1m0s, 59.986s, 141.762ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  97.987ms, 142.404ms, 135.91ms, 175.954ms, 193.3ms, 239.296ms, 422.447ms
-Bytes In      [total, mean]                     60167824, 14325.67
-Bytes Out     [total, mean]                     302013, 71.91
+Duration      [total, attack, wait]             1m0s, 59.986s, 144.418ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  128.003ms, 175.541ms, 168.989ms, 209.241ms, 225.687ms, 265.645ms, 388.648ms
+Bytes In      [total, mean]                     109324902, 26029.74
+Bytes Out     [total, mean]                     301848, 71.87
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:4200
+Status Codes  [code:count]                      200:4200  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 80
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         4800, 80.02, 79.78
-Duration      [total, attack, wait]             1m0s, 59.988s, 176.619ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  99.926ms, 142.867ms, 136.134ms, 175.079ms, 189.132ms, 233.682ms, 390.443ms
-Bytes In      [total, mean]                     68566422, 14284.67
-Bytes Out     [total, mean]                     345040, 71.88
+Requests      [total, rate, throughput]         4800, 80.02, 79.74
+Duration      [total, attack, wait]             1m0s, 59.988s, 204.982ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  138.471ms, 184.877ms, 176.999ms, 225.999ms, 248.101ms, 278.563ms, 454.524ms
+Bytes In      [total, mean]                     125143255, 26071.51
+Bytes Out     [total, mean]                     345039, 71.88
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:4800
+Status Codes  [code:count]                      200:4800  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 90
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         5400, 90.02, 89.81
-Duration      [total, attack, wait]             1m0s, 59.989s, 136.72ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  105.025ms, 149.509ms, 142.321ms, 182.389ms, 206.355ms, 247.031ms, 463.221ms
-Bytes In      [total, mean]                     77275333, 14310.25
-Bytes Out     [total, mean]                     388147, 71.88
+Requests      [total, rate, throughput]         5400, 90.02, 89.75
+Duration      [total, attack, wait]             1m0s, 59.989s, 179.791ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  137.689ms, 213.624ms, 212.37ms, 265.9ms, 285.315ms, 317.868ms, 579.054ms
+Bytes In      [total, mean]                     140582127, 26033.73
+Bytes Out     [total, mean]                     388224, 71.89
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:5400
+Status Codes  [code:count]                      200:5400  
 Error Set:
 Entity rows: 1; Features: 250; Concurrency: 5; RPS: 100
 vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         6000, 100.02, 99.73
-Duration      [total, attack, wait]             1m0s, 59.99s, 172.723ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  112.452ms, 157.245ms, 146.508ms, 202.313ms, 218.3ms, 256.451ms, 661.687ms
-Bytes In      [total, mean]                     85716588, 14286.10
-Bytes Out     [total, mean]                     431298, 71.88
+Requests      [total, rate, throughput]         6000, 100.02, 99.64
+Duration      [total, attack, wait]             1m0s, 59.99s, 228.929ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  146.246ms, 275.268ms, 263.845ms, 330.878ms, 359.007ms, 406.871ms, 634.145ms
+Bytes In      [total, mean]                     156409622, 26068.27
+Bytes Out     [total, mean]                     431454, 71.91
 Success       [ratio]                           100.00%
-Status Codes  [code:count]                      200:6000
+Status Codes  [code:count]                      200:6000  
 Error Set:
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
-Requests      [total, rate, throughput]         600, 10.02, 0.49
-Duration      [total, attack, wait]             1m5s, 59.9s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  2.515s, 4.941s, 5s, 5s, 5s, 5s, 5.001s
-Bytes In      [total, mean]                     7602494, 12670.82
-Bytes Out     [total, mean]                     20979, 34.97
-Success       [ratio]                           5.33%
-Status Codes  [code:count]                      0:568  200:32
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.937s, 59.9s, 37.02ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  31.724ms, 40.755ms, 37.812ms, 48.582ms, 56.052ms, 91.85ms, 98.247ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     393000, 655.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      500:600  
 Error Set:
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 20
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         1200, 20.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.95s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.005s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             59.999s, 59.95s, 48.639ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.428ms, 41.532ms, 37.829ms, 48.676ms, 61.011ms, 101.088ms, 129.143ms
+Bytes In      [total, mean]                     132000, 110.00
+Bytes Out     [total, mean]                     785715, 654.76
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:1200
+Status Codes  [code:count]                      500:1200  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 30
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         1800, 30.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.966s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.004s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.966s, 37.257ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.068ms, 41.448ms, 38.093ms, 48.268ms, 60.004ms, 98.667ms, 118.69ms
+Bytes In      [total, mean]                     198000, 110.00
+Bytes Out     [total, mean]                     1179093, 655.05
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:1800
+Status Codes  [code:count]                      500:1800  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 40
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         2400, 40.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.975s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.008s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.975s, 37.409ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.625ms, 41.51ms, 38.077ms, 47.818ms, 61.021ms, 100.049ms, 157.462ms
+Bytes In      [total, mean]                     264000, 110.00
+Bytes Out     [total, mean]                     1571560, 654.82
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:2400
+Status Codes  [code:count]                      500:2400  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 50
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         3000, 50.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.979s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.009s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.98s, 96.18ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.511ms, 42.273ms, 38.714ms, 49.946ms, 62.777ms, 101.07ms, 125.355ms
+Bytes In      [total, mean]                     330000, 110.00
+Bytes Out     [total, mean]                     1964403, 654.80
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:3000
+Status Codes  [code:count]                      500:3000  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 60
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         3600, 60.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.983s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.005s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.983s, 34.638ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.762ms, 42.97ms, 39.528ms, 51.067ms, 62.583ms, 101.995ms, 134.658ms
+Bytes In      [total, mean]                     396000, 110.00
+Bytes Out     [total, mean]                     2357641, 654.90
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:3600
+Status Codes  [code:count]                      500:3600  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 70
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4200, 70.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.986s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.008s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.986s, 47.488ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.92ms, 43.412ms, 39.763ms, 52.378ms, 64.399ms, 104.457ms, 225.391ms
+Bytes In      [total, mean]                     462000, 110.00
+Bytes Out     [total, mean]                     2750620, 654.91
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:4200
+Status Codes  [code:count]                      500:4200  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 80
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4800, 80.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.982s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.007s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.988s, 43.262ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  33.067ms, 43.726ms, 40.087ms, 52.979ms, 64.77ms, 104.947ms, 126.349ms
+Bytes In      [total, mean]                     528000, 110.00
+Bytes Out     [total, mean]                     3143170, 654.83
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:4800
+Status Codes  [code:count]                      500:4800  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 90
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         5400, 90.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.987s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.016s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.989s, 36.131ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  32.858ms, 43.801ms, 40.24ms, 52.331ms, 63.331ms, 106.306ms, 131.417ms
+Bytes In      [total, mean]                     594000, 110.00
+Bytes Out     [total, mean]                     3536859, 654.97
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:5400
+Status Codes  [code:count]                      500:5400  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 50; Concurrency: 5; RPS: 100
 vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         6000, 100.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.988s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.006s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.99s, 47.74ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  33.45ms, 45.396ms, 41.023ms, 53.66ms, 68.518ms, 111.115ms, 396.715ms
+Bytes In      [total, mean]                     660000, 110.00
+Bytes Out     [total, mean]                     3930843, 655.14
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:6000
+Status Codes  [code:count]                      500:6000  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 10
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         600, 10.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.9s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5.001s, 5.001s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             59.94s, 59.9s, 40.176ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  36.413ms, 46.438ms, 41.652ms, 56.731ms, 87.321ms, 102.26ms, 145.932ms
+Bytes In      [total, mean]                     66000, 110.00
+Bytes Out     [total, mean]                     393028, 655.05
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:600
+Status Codes  [code:count]                      500:600  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 20
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         1200, 20.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.95s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.002s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             59.992s, 59.95s, 42.211ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.844ms, 47.278ms, 41.744ms, 61.143ms, 87.484ms, 109.569ms, 146.613ms
+Bytes In      [total, mean]                     132000, 110.00
+Bytes Out     [total, mean]                     786008, 655.01
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:1200
+Status Codes  [code:count]                      500:1200  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 30
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         1800, 30.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.967s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.007s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.967s, 41.005ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  36.132ms, 47.265ms, 42.341ms, 58ms, 87.043ms, 110.212ms, 148.384ms
+Bytes In      [total, mean]                     198000, 110.00
+Bytes Out     [total, mean]                     1178945, 654.97
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:1800
+Status Codes  [code:count]                      500:1800  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 40
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         2400, 40.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.975s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.003s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.975s, 46.508ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.937ms, 48.186ms, 42.492ms, 58.158ms, 98.146ms, 116.907ms, 335.456ms
+Bytes In      [total, mean]                     264000, 110.00
+Bytes Out     [total, mean]                     1571622, 654.84
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:2400
+Status Codes  [code:count]                      500:2400  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 50
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         3000, 50.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.98s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.009s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.98s, 43.354ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.894ms, 47.668ms, 42.457ms, 58.318ms, 90.965ms, 113.807ms, 240.823ms
+Bytes In      [total, mean]                     330000, 110.00
+Bytes Out     [total, mean]                     1964967, 654.99
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:3000
+Status Codes  [code:count]                      500:3000  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 60
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         3600, 60.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.983s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.009s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.983s, 40.476ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.869ms, 47.939ms, 42.871ms, 58.44ms, 88.985ms, 115.041ms, 265.507ms
+Bytes In      [total, mean]                     396000, 110.00
+Bytes Out     [total, mean]                     2357112, 654.75
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:3600
+Status Codes  [code:count]                      500:3600  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 70
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4200, 70.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.986s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.006s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.986s, 40.619ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  36.035ms, 48.83ms, 43.659ms, 60.165ms, 91.973ms, 115.047ms, 208.23ms
+Bytes In      [total, mean]                     462000, 110.00
+Bytes Out     [total, mean]                     2750844, 654.96
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:4200
+Status Codes  [code:count]                      500:4200  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 80
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         4800, 80.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.987s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.009s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.988s, 42.632ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.417ms, 49.201ms, 44.081ms, 61.083ms, 93.1ms, 116.341ms, 166.108ms
+Bytes In      [total, mean]                     528000, 110.00
+Bytes Out     [total, mean]                     3143445, 654.88
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:4800
+Status Codes  [code:count]                      500:4800  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 90
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         5400, 90.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.988s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.012s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.989s, 74.353ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  36.033ms, 50.101ms, 44.774ms, 62.88ms, 96.905ms, 117.511ms, 191.151ms
+Bytes In      [total, mean]                     594000, 110.00
+Bytes Out     [total, mean]                     3537332, 655.06
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:5400
+Status Codes  [code:count]                      500:5400  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
 Entity rows: 100; Features: 250; Concurrency: 5; RPS: 100
 vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
 Requests      [total, rate, throughput]         6000, 100.02, 0.00
-Duration      [total, attack, wait]             1m5s, 59.99s, 5s
-Latencies     [min, mean, 50, 90, 95, 99, max]  5s, 5s, 5s, 5s, 5s, 5s, 5.01s
-Bytes In      [total, mean]                     0, 0.00
-Bytes Out     [total, mean]                     0, 0.00
+Duration      [total, attack, wait]             1m0s, 59.99s, 86.827ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  36.378ms, 49.937ms, 44.953ms, 61.348ms, 93.079ms, 118.55ms, 175.981ms
+Bytes In      [total, mean]                     660000, 110.00
+Bytes Out     [total, mean]                     3928838, 654.81
 Success       [ratio]                           0.00%
-Status Codes  [code:count]                      0:6000
+Status Codes  [code:count]                      500:6000  
 Error Set:
-Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
-Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+500 Internal Server Error
