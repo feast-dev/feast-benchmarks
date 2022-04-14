@@ -6,8 +6,8 @@ ENV COMPILE_GO=True
 RUN curl https://storage.googleapis.com/golang/go1.16.2.linux-amd64.tar.gz -o go.tar.gz && \
     tar -zxf go.tar.gz && \
     rm -rf go.tar.gz && \
-    mv go /go
-ENV GOPATH /go
+    mv go /tmp/go
+ENV GOPATH /tmp/go
 ENV PATH $PATH:/go/bin:$GOPATH/bin
 
 RUN pip3 install 'feast[redis]==0.19.4'
