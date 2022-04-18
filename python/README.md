@@ -18,7 +18,7 @@ For all of the following benchmarks, you'll need to generate the data using `dat
 
 1. Apply feature definitions to create a Feast repo.
 ```
-cd feature_repos/redis
+cd python/feature_repos/redis
 feast apply
 ```
 
