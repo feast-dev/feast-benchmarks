@@ -6,6 +6,3 @@ online_store:
   region: us-west-2
 offline_store:
   type: file
-flags:
-  alpha_features: true
-  python_feature_server: true
