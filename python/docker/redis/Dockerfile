@@ -1,6 +1,7 @@
 FROM python:3.9
 
-RUN pip3 install 'feast[redis]==0.20.0'
+RUN pip3 install 'feast[redis]==0.20.1'
+RUN pip3 install cffi
 
 COPY feature_repos/redis feature_repo
 

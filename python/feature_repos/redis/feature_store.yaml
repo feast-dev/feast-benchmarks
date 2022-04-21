@@ -6,3 +6,4 @@ online_store:
   connection_string: redis:6379
 offline_store:
   type: file
+go_feature_retrieval: True
