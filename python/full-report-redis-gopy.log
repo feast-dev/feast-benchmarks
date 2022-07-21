@@ -1,0 +1,1106 @@
+Note that these benchmarks were run with the version of Feast up to commit 23c09c83bc530de830ba867b10ceb02f113db5d6 on master (after v0.22, before v0.23). They were run with the Python HTTP server + Redis online store, using the Go feature retrieval logic (e.g. calling into Go using gopy). In the future, these benchmarks should be run as part of tests on a scheduled basis.
+
+Change only number of rows
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.01
+Duration      [total, attack, wait]             59.947s, 59.9s, 46.686ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  45.891ms, 47.371ms, 47.161ms, 48.48ms, 49.46ms, 50.129ms, 52.643ms
+Bytes In      [total, mean]                     3038417, 5064.03
+Bytes Out     [total, mean]                     43136, 71.89
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 10; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-10-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.01
+Duration      [total, attack, wait]             59.957s, 59.9s, 56.908ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  54.377ms, 56.229ms, 56.057ms, 57.502ms, 58.335ms, 59.294ms, 59.988ms
+Bytes In      [total, mean]                     13349876, 22249.79
+Bytes Out     [total, mean]                     74965, 124.94
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 20; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-20-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.01
+Duration      [total, attack, wait]             59.965s, 59.9s, 64.883ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  63.7ms, 65.827ms, 65.718ms, 66.945ms, 68ms, 68.81ms, 70.187ms
+Bytes In      [total, mean]                     24844585, 41407.64
+Bytes Out     [total, mean]                     110259, 183.76
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 30; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-30-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             59.974s, 59.9s, 73.957ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  72.79ms, 75.291ms, 75.137ms, 76.601ms, 77.284ms, 78.248ms, 79.955ms
+Bytes In      [total, mean]                     36344470, 60574.12
+Bytes Out     [total, mean]                     145474, 242.46
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 40; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-40-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             59.985s, 59.9s, 85.11ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  82.078ms, 84.74ms, 84.617ms, 86.19ms, 86.737ms, 88.279ms, 88.816ms
+Bytes In      [total, mean]                     47834916, 79724.86
+Bytes Out     [total, mean]                     180853, 301.42
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 50; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-50-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             59.993s, 59.9s, 93.209ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  90.884ms, 94.329ms, 94.264ms, 95.865ms, 96.398ms, 97.777ms, 98.529ms
+Bytes In      [total, mean]                     59334214, 98890.36
+Bytes Out     [total, mean]                     216299, 360.50
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 60; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-60-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             1m0s, 59.9s, 103.245ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  101.432ms, 104.584ms, 104.352ms, 106.807ms, 107.56ms, 109.473ms, 111.35ms
+Bytes In      [total, mean]                     70830799, 118051.33
+Bytes Out     [total, mean]                     251581, 419.30
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 70; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-70-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             1m0s, 59.9s, 112.476ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  110.068ms, 114.885ms, 113.989ms, 118.503ms, 121.176ms, 129.248ms, 135.564ms
+Bytes In      [total, mean]                     82322329, 137203.88
+Bytes Out     [total, mean]                     287011, 478.35
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 80; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-80-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.00
+Duration      [total, attack, wait]             1m0s, 59.9s, 122.071ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  119.956ms, 126.937ms, 124.36ms, 136.117ms, 137.229ms, 140.218ms, 145.248ms
+Bytes In      [total, mean]                     93822487, 156370.81
+Bytes Out     [total, mean]                     322242, 537.07
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 90; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-90-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.99
+Duration      [total, attack, wait]             1m0s, 59.9s, 132.961ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  129.858ms, 136.727ms, 134.114ms, 146.638ms, 149.387ms, 155.897ms, 168.89ms
+Bytes In      [total, mean]                     105321079, 175535.13
+Bytes Out     [total, mean]                     357694, 596.16
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.99
+Duration      [total, attack, wait]             1m0s, 59.9s, 140.904ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  138.794ms, 146.259ms, 143.952ms, 152.776ms, 163.931ms, 167.961ms, 176.375ms
+Bytes In      [total, mean]                     116817255, 194695.42
+Bytes Out     [total, mean]                     393022, 655.04
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Change only number of features
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 10.01
+Duration      [total, attack, wait]             59.947s, 59.9s, 46.926ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.27ms, 47.593ms, 47.41ms, 48.563ms, 49.743ms, 50.381ms, 51.879ms
+Bytes In      [total, mean]                     3036630, 5061.05
+Bytes Out     [total, mean]                     43134, 71.89
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 1; Features: 100; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-100.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.99
+Duration      [total, attack, wait]             1m0s, 59.9s, 159.119ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  158.839ms, 163.966ms, 163.003ms, 167.25ms, 171.062ms, 179.535ms, 214.578ms
+Bytes In      [total, mean]                     5998867, 9998.11
+Bytes Out     [total, mean]                     43121, 71.87
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 1; Features: 150; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-150.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.96
+Duration      [total, attack, wait]             1m0s, 59.9s, 341.12ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  340.649ms, 354.723ms, 350.973ms, 371.197ms, 384.03ms, 413.78ms, 432.668ms
+Bytes In      [total, mean]                     8984841, 14974.74
+Bytes Out     [total, mean]                     43118, 71.86
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 1; Features: 200; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-200.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.92
+Duration      [total, attack, wait]             1m0s, 59.9s, 599.269ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  592.924ms, 630.584ms, 625.444ms, 669.585ms, 680.66ms, 713.077ms, 746.485ms
+Bytes In      [total, mean]                     11980650, 19967.75
+Bytes Out     [total, mean]                     43128, 71.88
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:600  
+Error Set:
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 1.03
+Duration      [total, attack, wait]             1m5s, 59.9s, 5s
+Latencies     [min, mean, 50, 90, 95, 99, max]  1.024s, 4.774s, 5s, 5s, 5s, 5s, 5.001s
+Bytes In      [total, mean]                     1673595, 2789.32
+Bytes Out     [total, mean]                     4816, 8.03
+Success       [ratio]                           11.17%
+Status Codes  [code:count]                      0:533  200:67  
+Error Set:
+Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Change only number of requests
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 9.44
+Duration      [total, attack, wait]             59.947s, 59.9s, 47.182ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.095ms, 1.459s, 49.557ms, 4.32s, 5s, 5s, 5s
+Bytes In      [total, mean]                     2864440, 4774.07
+Bytes Out     [total, mean]                     40697, 67.83
+Success       [ratio]                           94.33%
+Status Codes  [code:count]                      0:34  200:566  
+Error Set:
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 20; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1200, 20.02, 20.00
+Duration      [total, attack, wait]             59.998s, 59.95s, 47.778ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  45.901ms, 47.411ms, 47.161ms, 48.412ms, 49.495ms, 50.195ms, 51.977ms
+Bytes In      [total, mean]                     6071700, 5059.75
+Bytes Out     [total, mean]                     86270, 71.89
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:1200  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 30; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1800, 30.02, 29.99
+Duration      [total, attack, wait]             1m0s, 59.967s, 46.477ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  45.976ms, 47.949ms, 47.509ms, 49.135ms, 49.899ms, 58.577ms, 73.683ms
+Bytes In      [total, mean]                     9106735, 5059.30
+Bytes Out     [total, mean]                     129317, 71.84
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:1800  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 40; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         2400, 40.02, 39.99
+Duration      [total, attack, wait]             1m0s, 59.975s, 46.435ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  45.974ms, 48.003ms, 47.539ms, 49.07ms, 49.739ms, 65.266ms, 68.637ms
+Bytes In      [total, mean]                     12154285, 5064.29
+Bytes Out     [total, mean]                     172551, 71.90
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:2400  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 50; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3000, 50.02, 49.98
+Duration      [total, attack, wait]             1m0s, 59.98s, 48.119ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.019ms, 48.643ms, 48.034ms, 50.299ms, 51.29ms, 69.584ms, 72.703ms
+Bytes In      [total, mean]                     15188575, 5062.86
+Bytes Out     [total, mean]                     215601, 71.87
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:3000  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 60; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3600, 60.02, 59.97
+Duration      [total, attack, wait]             1m0s, 59.983s, 50.207ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  45.992ms, 48.667ms, 48.066ms, 50.081ms, 54.338ms, 59.32ms, 73.908ms
+Bytes In      [total, mean]                     18224120, 5062.26
+Bytes Out     [total, mean]                     258799, 71.89
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:3600  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 70; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4200, 70.02, 69.96
+Duration      [total, attack, wait]             1m0s, 59.986s, 46.802ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.19ms, 49.712ms, 48.708ms, 51.449ms, 59.57ms, 66.833ms, 81.046ms
+Bytes In      [total, mean]                     21266291, 5063.40
+Bytes Out     [total, mean]                     301885, 71.88
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:4200  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 80; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4800, 80.02, 79.95
+Duration      [total, attack, wait]             1m0s, 59.988s, 48.482ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.306ms, 50.142ms, 48.867ms, 54.103ms, 57.638ms, 72.112ms, 85.669ms
+Bytes In      [total, mean]                     24292524, 5060.94
+Bytes Out     [total, mean]                     345061, 71.89
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:4800  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 90; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         5400, 90.02, 89.95
+Duration      [total, attack, wait]             1m0s, 59.989s, 47.697ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.437ms, 51.276ms, 49.426ms, 57.875ms, 65.974ms, 77.176ms, 86.801ms
+Bytes In      [total, mean]                     27341056, 5063.16
+Bytes Out     [total, mean]                     388176, 71.88
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:5400  
+Error Set:
+Entity rows: 1; Features: 50; Concurrency: 5; RPS: 100; Num servers 16
+vegeta attack -format json -targets requests-1-50.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         6000, 100.02, 99.92
+Duration      [total, attack, wait]             1m0s, 59.99s, 58.311ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  46.48ms, 53.153ms, 49.883ms, 65.161ms, 73.091ms, 80.872ms, 88.558ms
+Bytes In      [total, mean]                     30367752, 5061.29
+Bytes Out     [total, mean]                     431285, 71.88
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:6000  
+Error Set:
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 0.96
+Duration      [total, attack, wait]             1m5s, 59.9s, 5s
+Latencies     [min, mean, 50, 90, 95, 99, max]  1.022s, 4.785s, 5s, 5s, 5s, 5s, 5.001s
+Bytes In      [total, mean]                     1552446, 2587.41
+Bytes Out     [total, mean]                     4461, 7.43
+Success       [ratio]                           10.33%
+Status Codes  [code:count]                      0:538  200:62  
+Error Set:
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6574/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 20; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1200, 20.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.95s, 4.95s
+Latencies     [min, mean, 50, 90, 95, 99, max]  204.55µs, 4.505s, 5s, 5s, 5s, 5s, 5.002s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1200  
+Error Set:
+Post "http://127.0.0.1:6574/get-online-features": EOF
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6570/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6570/get-online-features": EOF
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 30; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1800, 30.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.966s, 5s
+Latencies     [min, mean, 50, 90, 95, 99, max]  197.914µs, 4.336s, 5s, 5s, 5s, 5s, 5.003s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1800  
+Error Set:
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6576/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6579/get-online-features": EOF
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 40; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         2400, 40.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.975s, 5s
+Latencies     [min, mean, 50, 90, 95, 99, max]  177.065µs, 3.152s, 5s, 5s, 5s, 5s, 5.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:2400  
+Error Set:
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": EOF
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6568/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6572/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6575/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6580/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6581/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6571/get-online-features": EOF
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": EOF
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": EOF
+Post "http://127.0.0.1:6572/get-online-features": read tcp 127.0.0.1:49959->127.0.0.1:6572: read: connection reset by peer
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": EOF
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": EOF
+Post "http://127.0.0.1:6580/get-online-features": EOF
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 50; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3000, 50.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.98s, 4.96s
+Latencies     [min, mean, 50, 90, 95, 99, max]  118.653µs, 1.766s, 252.336µs, 5s, 5s, 5s, 5.001s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3000  
+Error Set:
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6578/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6567/get-online-features": EOF
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": EOF
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 60; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3600, 60.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.983s, 4.95s
+Latencies     [min, mean, 50, 90, 95, 99, max]  73.107µs, 599.643ms, 129.535µs, 5s, 5s, 5s, 5s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3600  
+Error Set:
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6566/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6569/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6577/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6566/get-online-features": EOF
+Post "http://127.0.0.1:6566/get-online-features": read tcp 127.0.0.1:41355->127.0.0.1:6566: read: connection reset by peer
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": EOF
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": EOF
+Post "http://127.0.0.1:6577/get-online-features": read tcp 127.0.0.1:38747->127.0.0.1:6577: read: connection reset by peer
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 70; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4200, 70.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.986s, 4.943s
+Latencies     [min, mean, 50, 90, 95, 99, max]  69.844µs, 310.822ms, 105.188µs, 144.593µs, 5s, 5s, 5s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4200  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 80; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4800, 80.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.987s, 4.85s
+Latencies     [min, mean, 50, 90, 95, 99, max]  73.028µs, 310.522ms, 103.604µs, 139.136µs, 5s, 5s, 5s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4800  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 90; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         5400, 90.02, 0.00
+Duration      [total, attack, wait]             1m5s, 59.989s, 4.856s
+Latencies     [min, mean, 50, 90, 95, 99, max]  75.457µs, 310.292ms, 105.028µs, 139.521µs, 5s, 5s, 5s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:5400  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Entity rows: 1; Features: 250; Concurrency: 5; RPS: 100; Num servers 16
+vegeta attack -format json -targets requests-1-250.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         6000, 100.02, 0.00
+Duration      [total, attack, wait]             59.99s, 59.99s, 98.221µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.693µs, 18.075ms, 73.552µs, 94.741µs, 107.675µs, 159.368µs, 5s
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:6000  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+Post "http://127.0.0.1:6573/get-online-features": EOF
+Post "http://127.0.0.1:6573/get-online-features": read tcp 127.0.0.1:38111->127.0.0.1:6573: read: connection reset by peer
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.9s, 59.9s, 146.771µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  76.167µs, 104.781µs, 92.646µs, 154.519µs, 175.553µs, 197.812µs, 528.664µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:600  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 20; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1200, 20.02, 0.00
+Duration      [total, attack, wait]             59.95s, 59.95s, 103.657µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  72.459µs, 92.061µs, 83.839µs, 118.835µs, 139.913µs, 175.753µs, 433.499µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1200  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 30; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1800, 30.02, 0.00
+Duration      [total, attack, wait]             59.967s, 59.967s, 77.991µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  68.621µs, 85.772µs, 80.455µs, 95.776µs, 109.349µs, 171.694µs, 1.143ms
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1800  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 40; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         2400, 40.02, 0.00
+Duration      [total, attack, wait]             59.975s, 59.975s, 160.551µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  68.407µs, 80.856µs, 76.356µs, 90.239µs, 101.788µs, 145.831µs, 1.141ms
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:2400  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 50; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3000, 50.02, 0.00
+Duration      [total, attack, wait]             59.98s, 59.98s, 69.442µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  67.511µs, 80.641µs, 77.03µs, 90.405µs, 99.274µs, 135.701µs, 473.734µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3000  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 60; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3600, 60.02, 0.00
+Duration      [total, attack, wait]             59.983s, 59.983s, 66.001µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  65.864µs, 77.46µs, 74.473µs, 85.577µs, 94.39µs, 128.007µs, 500.475µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3600  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 70; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4200, 70.02, 0.00
+Duration      [total, attack, wait]             59.986s, 59.986s, 118.87µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  65.941µs, 78.412µs, 75.229µs, 86.769µs, 95.027µs, 125.789µs, 448.81µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4200  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 80; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4800, 80.02, 0.00
+Duration      [total, attack, wait]             59.988s, 59.987s, 122.588µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  65.412µs, 77.48µs, 74.766µs, 83.265µs, 92.068µs, 125.057µs, 546.223µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4800  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 90; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         5400, 90.02, 0.00
+Duration      [total, attack, wait]             59.988s, 59.988s, 69.081µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.667µs, 78.823µs, 75.825µs, 85.27µs, 92.97µs, 121.393µs, 600.85µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:5400  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 50; Concurrency: 5; RPS: 100; Num servers 16
+vegeta attack -format json -targets requests-100-50.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         6000, 100.02, 0.00
+Duration      [total, attack, wait]             59.99s, 59.99s, 68.931µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  65.25µs, 76.539µs, 73.778µs, 83.042µs, 91.375µs, 120.746µs, 963.044µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:6000  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 10; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 10/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         600, 10.02, 0.00
+Duration      [total, attack, wait]             59.9s, 59.9s, 73.777µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  72.949µs, 92.723µs, 84.623µs, 110.214µs, 147.753µs, 180.2µs, 1.006ms
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:600  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 20; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 20/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1200, 20.02, 0.00
+Duration      [total, attack, wait]             59.95s, 59.95s, 74.207µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  69.707µs, 86.453µs, 80.028µs, 98.808µs, 121.006µs, 166.958µs, 1.075ms
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1200  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 30; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 30/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         1800, 30.02, 0.00
+Duration      [total, attack, wait]             59.966s, 59.966s, 79.437µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  65.974µs, 87.086µs, 82.075µs, 99.062µs, 107.899µs, 163.626µs, 737.241µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:1800  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 40; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 40/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         2400, 40.02, 0.00
+Duration      [total, attack, wait]             59.975s, 59.975s, 129.778µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  68.904µs, 81.174µs, 77.576µs, 90.875µs, 98.678µs, 135.034µs, 540.819µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:2400  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 50; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 50/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3000, 50.02, 0.00
+Duration      [total, attack, wait]             59.98s, 59.98s, 84.3µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  70.905µs, 85.78µs, 81.599µs, 94.05µs, 106.363µs, 142.687µs, 550.231µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3000  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 60; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 60/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         3600, 60.02, 0.00
+Duration      [total, attack, wait]             59.983s, 59.983s, 86.78µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  67.072µs, 79.643µs, 75.469µs, 90.365µs, 100.856µs, 138.284µs, 583.762µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:3600  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 70; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 70/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4200, 70.02, 0.00
+Duration      [total, attack, wait]             59.985s, 59.985s, 72.267µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.432µs, 78.792µs, 75.72µs, 86.051µs, 96.845µs, 129.151µs, 577.489µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4200  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 80; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 80/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         4800, 80.02, 0.00
+Duration      [total, attack, wait]             59.988s, 59.988s, 110.057µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.1µs, 75.783µs, 72.742µs, 81.588µs, 92.034µs, 127.654µs, 544.369µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:4800  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 90; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 90/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         5400, 90.02, 0.00
+Duration      [total, attack, wait]             59.989s, 59.989s, 68.904µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.344µs, 77.455µs, 74.727µs, 83.777µs, 92.258µs, 120.798µs, 577.522µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:5400  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
+Entity rows: 100; Features: 250; Concurrency: 5; RPS: 100; Num servers 16
+vegeta attack -format json -targets requests-100-250.json -connections 5 -duration 1m -rate 100/1s -timeout 5s | vegeta report
+Requests      [total, rate, throughput]         6000, 100.02, 0.00
+Duration      [total, attack, wait]             59.99s, 59.989s, 76.539µs
+Latencies     [min, mean, 50, 90, 95, 99, max]  66.427µs, 77.317µs, 74.762µs, 82.741µs, 90.797µs, 119.303µs, 568.307µs
+Bytes In      [total, mean]                     0, 0.00
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           0.00%
+Status Codes  [code:count]                      0:6000  
+Error Set:
+Post "http://127.0.0.1:6566/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6566: connect: connection refused
+Post "http://127.0.0.1:6567/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6567: connect: connection refused
+Post "http://127.0.0.1:6568/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6568: connect: connection refused
+Post "http://127.0.0.1:6569/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6569: connect: connection refused
+Post "http://127.0.0.1:6570/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6570: connect: connection refused
+Post "http://127.0.0.1:6571/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6571: connect: connection refused
+Post "http://127.0.0.1:6572/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6572: connect: connection refused
+Post "http://127.0.0.1:6573/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6573: connect: connection refused
+Post "http://127.0.0.1:6574/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6574: connect: connection refused
+Post "http://127.0.0.1:6575/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6575: connect: connection refused
+Post "http://127.0.0.1:6576/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6576: connect: connection refused
+Post "http://127.0.0.1:6577/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6577: connect: connection refused
+Post "http://127.0.0.1:6578/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6578: connect: connection refused
+Post "http://127.0.0.1:6579/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6579: connect: connection refused
+Post "http://127.0.0.1:6580/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6580: connect: connection refused
+Post "http://127.0.0.1:6581/get-online-features": dial tcp 0.0.0.0:0->127.0.0.1:6581: connect: connection refused
