@@ -10,6 +10,8 @@ You need to have the following installed:
 * Docker Compose
 * Vegeta
 
+All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 64GiB memory).
+
 ## Generate Data
 
 For all of the following benchmarks, you'll need to generate the data using `data_generator.py` under the top-level directory of this repo. Just `cd` to the main directory and run `python data_generator.py`.
