@@ -8,4 +8,7 @@ services:
     deploy:
       replicas: 16
     volumes:
-      - ~/.aws:/root/.aws:ro
+      - type: bind
+        source: ${HOME}/.aws/
+        target: /root/.aws
+        read_only: yes

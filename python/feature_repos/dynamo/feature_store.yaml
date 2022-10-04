@@ -6,3 +6,4 @@ online_store:
   region: us-west-2
 offline_store:
   type: file
+entity_key_serialization_version: 2

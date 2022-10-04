@@ -1,5 +1,4 @@
 import datetime
-from google.protobuf.duration_pb2 import Duration
 
 from feast import Entity, Field, FeatureView, FileSource, FeatureService, ValueType
 from feast.types import Int64

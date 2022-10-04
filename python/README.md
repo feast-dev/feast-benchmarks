@@ -10,7 +10,7 @@ You need to have the following installed:
 * Docker Compose
 * Vegeta
 
-All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 64GiB memory).
+All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 64GiB memory) or a GCP GCE instance (c2-standard-16, 16 vCPU), on the same region as the target online stores.
 
 ## Generate Data
 
