@@ -2,15 +2,19 @@
 
 Here we provide tools for benchmarking Python-based feature server with 3 online stores: Redis, AWS DynamoDB, and GCP Datastore. Follow the instructions below to reproduce the benchmarks.
 
+_Tested with: `feast 0.25.1`_
+
 ## Prerequisites
 
 You need to have the following installed:
-* Feast 0.17+
+* Python `3.8+`
+* Feast `0.25+`
 * Docker
-* Docker Compose
+* Docker Compose `v2.x`
 * Vegeta
+* `parquet-tools`
 
-All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 64GiB memory) or a GCP GCE instance (c2-standard-16, 16 vCPU), on the same region as the target online stores.
+All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 32GiB memory) or a GCP GCE instance (c2-standard-16, 16 vCPU, 64GiB memory), on the same region as the target online stores.
 
 ## Generate Data
 
@@ -53,9 +57,14 @@ Creating redis_feast_16 ... done
 3. Materialize data to Redis
 ```
 cd ../../feature_repos/redis
-sed -i 's/redis:6379/localhost:6379/g' feature_store.yaml # this is unfortunately necessary because inside docker feature servers resolve Redis host name as `redis`, but since we're running materialization from shell, Redis is accessible on localhost.
+# This is unfortunately necessary because inside docker feature servers resolve
+# Redis host name as `redis`, but since we're running materialization from shell,
+# Redis is accessible on localhost:
+sed -i 's/redis:6379/localhost:6379/g' feature_store.yaml
 feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
-sed -i 's/localhost:6379/redis:6379/g' feature_store.yaml # make sure to change this back, since it can mess up with feature servers if you run another docker-compose command later. 
+# Make sure to change this back, since it can mess up with feature servers
+# if you run another docker-compose command later:
+sed -i 's/localhost:6379/redis:6379/g' feature_store.yaml
 ```
 
 4. Check that feature servers are working & they have materialized data
@@ -72,20 +81,31 @@ This should return something like this:
 |     1992 |
 |     4475 |
 ```
-Take your 3 numbers and replace in this query:
+
+Put these numbers into an env variable with:
+```
+TEST_ENTITY_IDS=`parquet-tools show --columns entity generated_data.parquet 2>/dev/null | head -n 6 | tail -n 3 | sed 's/|//g' | paste -d, -s`
+echo $TEST_ENTITY_IDS
+```
+(which should output something like `94  ,   1992   ,   4475  `)
+
+
+Query the feature server with
 ```
 curl -X POST \
   "http://127.0.0.1:6566/get-online-features" \
   -H "accept: application/json" \
-  -d '{
-    "feature_service": "feature_service_0",
-    "entities": {
-      "entity": [94, 1992, 4475]
+  -d "{
+    \"feature_service\": \"feature_service_0\",
+    \"entities\": {
+      \"entity\": [$TEST_ENTITY_IDS]
     }
-  }' | jq
+  }" | jq
 ```
 
-In the output, make sure that `"values"` field contains none of the null values. It should look something like this:
+
+In the output, make sure that `"values"` field contains none of the null
+values. It should look something like this:
 ```
     {
       "values": [
@@ -154,18 +174,26 @@ This should return something like this:
 |       94 |
 |     1992 |
 |     4475 |
+
+Put these numbers into an env variable with:
 ```
-Take your 3 numbers and replace in this query:
+TEST_ENTITY_IDS=`parquet-tools show --columns entity generated_data.parquet 2>/dev/null | head -n 6 | tail -n 3 | sed 's/|//g' | paste -d, -s`
+echo $TEST_ENTITY_IDS
+```
+(which should output something like `94  ,   1992   ,   4475  `)
+
+
+Query the feature server with
 ```
 curl -X POST \
   "http://127.0.0.1:6566/get-online-features" \
   -H "accept: application/json" \
-  -d '{
-    "feature_service": "feature_service_0",
-    "entities": {
-      "entity": [94, 1992, 4475]
+  -d "{
+    \"feature_service\": \"feature_service_0\",
+    \"entities\": {
+      \"entity\": [$TEST_ENTITY_IDS]
     }
-  }' | jq
+  }" | jq
 ```
 
 In the output, make sure that `"values"` field contains none of the null values. It should look something like this:
@@ -184,6 +212,10 @@ cd python
 ```
 
 ## GCP Datastore
+
+For this benchmark, you need GCP credentials accessible. Here it is assumed that it's all in
+`${HOME}/.config/gcloud`, which will be available to the docker containers running
+the feature server. (Adjust as needed by inspecting the `docker-compose.yml`).
 
 1. Apply feature definitions to create a Feast repo.
 ```
@@ -235,18 +267,26 @@ This should return something like this:
 |       94 |
 |     1992 |
 |     4475 |
+
+Put these numbers into an env variable with:
 ```
-Take your 3 numbers and replace in this query:
+TEST_ENTITY_IDS=`parquet-tools show --columns entity generated_data.parquet 2>/dev/null | head -n 6 | tail -n 3 | sed 's/|//g' | paste -d, -s`
+echo $TEST_ENTITY_IDS
+```
+(which should output something like `94  ,   1992   ,   4475  `)
+
+
+Query the feature server with
 ```
 curl -X POST \
   "http://127.0.0.1:6566/get-online-features" \
   -H "accept: application/json" \
-  -d '{
-    "feature_service": "feature_service_0",
-    "entities": {
-      "entity": [94, 1992, 4475]
+  -d "{
+    \"feature_service\": \"feature_service_0\",
+    \"entities\": {
+      \"entity\": [$TEST_ENTITY_IDS]
     }
-  }' | jq
+  }" | jq
 ```
 
 In the output, make sure that `"values"` field contains none of the null values. It should look something like this:
