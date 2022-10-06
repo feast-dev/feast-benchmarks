@@ -174,6 +174,7 @@ This should return something like this:
 |       94 |
 |     1992 |
 |     4475 |
+```
 
 Put these numbers into an env variable with:
 ```
@@ -267,6 +268,7 @@ This should return something like this:
 |       94 |
 |     1992 |
 |     4475 |
+```
 
 Put these numbers into an env variable with:
 ```
