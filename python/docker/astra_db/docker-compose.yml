@@ -1,0 +1,9 @@
+services:
+  feast:
+    build:
+      context: ../..
+      dockerfile: docker/astra_db/Dockerfile
+    ports:
+      - "6566-6581:6566"
+    deploy:
+      replicas: 16

@@ -3,3 +3,5 @@ online_store.db
 registry.db
 venv
 requests*.json
+*.secrets
+secure-connect*.zip

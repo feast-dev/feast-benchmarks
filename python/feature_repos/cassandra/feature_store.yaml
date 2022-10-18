@@ -4,7 +4,7 @@ provider: local
 online_store:
   type: cassandra
   hosts:
-    - 172.19.0.18
+    - 127.0.0.1
   keyspace: feast_test
   protocol_version: 5
 entity_key_serialization_version: 2
