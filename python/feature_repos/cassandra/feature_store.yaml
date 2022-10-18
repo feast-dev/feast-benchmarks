@@ -4,7 +4,10 @@ provider: local
 online_store:
   type: cassandra
   hosts:
-    - 127.0.0.1
+    - cassandra
   keyspace: feast_test
   protocol_version: 5
+  load_balancing:
+    local_dc: 'datacenter1'
+    load_balancing_policy: 'TokenAwarePolicy(DCAwareRoundRobinPolicy)'
 entity_key_serialization_version: 2
