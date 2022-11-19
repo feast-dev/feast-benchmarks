@@ -11,7 +11,7 @@ RUN mkdir -p /usr/local/gcloud \
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-RUN pip3 install 'feast[gcp]==0.25.1'
+RUN pip3 install 'feast[gcp]==0.26'
 
 COPY feature_repos/datastore feature_repo
 

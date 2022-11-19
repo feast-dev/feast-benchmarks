@@ -345,7 +345,7 @@ benchmarking containers.
 
 ```
 cd docker/cassandra
-docker compose up
+docker-compose up -d
 ```
 
 If everything goes well, you should see an output like this:
@@ -384,6 +384,8 @@ docker exec -it cassandra-cassandra-1 cqlsh -e \
 3. From the host machine, provision the feature store:
 
 ```
+cd ../../feature_repos/cassandra/
+
 # This is unfortunately necessary because inside docker feature servers resolve
 # Cassandra host name as `cassandra`, but since we're running materialization from shell,
 # Cassandra is accessible on localhost:

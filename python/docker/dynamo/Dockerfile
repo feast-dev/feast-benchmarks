@@ -1,6 +1,6 @@
 FROM python:3.9
 
-RUN pip3 install 'feast[aws]==0.25.1'
+RUN pip3 install 'feast[aws]==0.26'
 
 COPY feature_repos/dynamo feature_repo
 
