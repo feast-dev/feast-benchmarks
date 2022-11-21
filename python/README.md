@@ -16,6 +16,8 @@ You need to have the following installed:
 
 All these benchmarks are run on an EC2 instance (c5.4xlarge, 16vCPU, 32GiB memory) or a GCP GCE instance (c2-standard-16, 16 vCPU, 64GiB memory), on the same region as the target online stores.
 
+**Note**: see [here](cloud_machines.md) for details on how to provision the cloud instances to run the tests.
+
 ## Generate Data
 
 For all of the following benchmarks, you'll need to generate the data using `data_generator.py` under the top-level directory of this repo. Just `cd` to the main directory and run `python data_generator.py`.
@@ -270,6 +272,12 @@ Creating datastore_feast_14 ... done
 Creating datastore_feast_15 ... done
 Creating datastore_feast_16 ... done
 ```
+
+> _Note_: The Python google package requires not only the credentials to be accessible
+> (in read-write mode, as can be seen in the Datastore docker-compose.yml),
+> but also the google cloud SDK to be installed.
+> For this reason there is an additional step in the Dockerfile for Datastore,
+> which handles the installation. [Reference](https://stackoverflow.com/questions/28372328/how-to-install-the-google-cloud-sdk-in-a-docker-image).
 
 3. Materialize data to Datastore
 
