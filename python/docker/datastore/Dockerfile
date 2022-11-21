@@ -1,9 +1,17 @@
 FROM python:3.9
 
-RUN pip3 install 'feast[gcp]==0.17.0'
-# Remove after feast 0.18 comes out
-RUN pip3 install 'git+https://github.com/feast-dev/feast.git@9f2c6d6168bac1b11be2c76c6b266a7444fc11c7#subdirectory=sdk/python'
+# Downloading gcloud package
+RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
 
+# Installing the package
+RUN mkdir -p /usr/local/gcloud \
+  && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
+  && /usr/local/gcloud/google-cloud-sdk/install.sh
+
+# Adding the package path to local
+ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
+RUN pip3 install 'feast[gcp]==0.26'
 
 COPY feature_repos/datastore feature_repo
 

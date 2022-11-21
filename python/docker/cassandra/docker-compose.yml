@@ -1,0 +1,15 @@
+services:
+  feast:
+    build:
+      context: ../..
+      dockerfile: docker/cassandra/Dockerfile
+    ports:
+      - "6566-6581:6566"
+    deploy:
+      replicas: 16
+    links:
+      - cassandra
+  cassandra:
+    image: cassandra:4.1
+    ports:
+     - "9042:9042"

@@ -1,9 +1,7 @@
 registry: data/registry.db
 project: feature_repo
-provider: aws
+provider: local
 online_store:
-  type: dynamodb
-  region: us-west-2
-offline_store:
-  type: file
+  type: sqlite
+  path: data/online_store.db
 entity_key_serialization_version: 2

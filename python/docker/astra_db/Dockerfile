@@ -1,9 +1,8 @@
 FROM python:3.9
 
-RUN pip3 install 'feast[redis]==0.26'
-RUN pip3 install cffi
+RUN pip3 install 'feast[cassandra]==0.26'
 
-COPY feature_repos/redis feature_repo
+COPY feature_repos/astra_db feature_repo
 
 WORKDIR feature_repo
 

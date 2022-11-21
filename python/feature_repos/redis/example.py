@@ -1,6 +1,7 @@
-from google.protobuf.duration_pb2 import Duration
+import datetime
 
-from feast import Entity, Feature, FeatureView, FileSource, ValueType, FeatureService
+from feast import Entity, Field, FeatureView, FileSource, FeatureService, ValueType
+from feast.types import Int64
 
 generated_data_source = FileSource(
     path="../../../generated_data.parquet",
@@ -15,14 +16,14 @@ entity = Entity(
 feature_views = [
     FeatureView(
         name=f"feature_view_{i}",
-        entities=["entity"],
-        ttl=Duration(seconds=86400),
-        features=[
-            Feature(name=f"feature_{10 * i + j}", dtype=ValueType.INT64)
+        entities=[entity],
+        ttl=datetime.timedelta(days=1),
+        schema=[
+            Field(name=f"feature_{10 * i + j}", dtype=Int64)
             for j in range(10)
         ],
         online=True,
-        batch_source=generated_data_source,
+        source=generated_data_source,
     )
     for i in range(25)
 ]

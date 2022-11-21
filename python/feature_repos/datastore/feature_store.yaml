@@ -5,6 +5,4 @@ online_store:
   type: datastore
 offline_store:
   type: file
-flags:
-  alpha_features: true
-  python_feature_server: true
+entity_key_serialization_version: 2
