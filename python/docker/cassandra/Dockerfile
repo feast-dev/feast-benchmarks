@@ -1,6 +1,6 @@
 FROM python:3.9
 
-RUN pip3 install git+https://github.com/hemidactylus/feast.git@sl-cassandra-optimize-bulk-reads#egg=feast[cassandra]
+RUN pip3 install 'feast[cassandra]==0.26'
 
 COPY feature_repos/cassandra feature_repo
 
