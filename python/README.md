@@ -373,7 +373,7 @@ If everything goes well, you should see an output like this:
 
 Wait about 60-90 seconds for Cassandra to fully start. Then you can proceed (if not ready yet, the next command will error and you can retry it a little later).
 
-2. Create the destination keyspace in Cassandra: check the output of this command to make sure `feast_test` is no where.
+2. Create the destination keyspace in Cassandra: check the output of this command to make sure `feast_test` is now here.
 
 ```
 docker exec -it cassandra-cassandra-1 cqlsh -e \
@@ -396,6 +396,7 @@ feast apply
 sed -i 's/- localhost/- cassandra/g' feature_store.yaml
 ```
 
+
 4. Similarly, materialize from the host machine:
 
 ```
@@ -407,6 +408,37 @@ feast materialize-incremental $(date -u +"%Y-%m-%dT%H:%M:%S")
 # Make sure to change this back, since it can mess up with feature servers
 # if you run another docker-compose command later:
 sed -i 's/- localhost/- cassandra/g' feature_store.yaml
+```
+
+3b. A workaround for the Dockerized feast to work
+
+The Docker container have a _copy_ of the registry directory, including data/registry.db.
+But the image gets done before the `apply` step above (it is inevitable if we want
+to create the keyspace and have the Cassandra part of the `docker-compose`),
+so the Docker `feast`s have not the updated `registry.db`. For the time being, a workaround
+is as follows:
+
+```
+docker cp data/registry.db cassandra-feast-1:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-2:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-3:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-4:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-5:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-6:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-7:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-8:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-9:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-10:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-11:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-12:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-13:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-14:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-15:/feature_repo/data/registry.db
+docker cp data/registry.db cassandra-feast-16:/feature_repo/data/registry.db
+
+cd ../../docker/cassandra/
+docker-compose restart
+cd ../../feature_repos/cassandra/
 ```
 
 5. Check that feature servers are working & they have materialized data
@@ -476,6 +508,12 @@ be placed inside the `python/feature_repos/astra_db/` directory.
 
 Adjust file `feature_store.yaml` in that directory to reflect Client ID, Client
 Secret, database keyspace name, AWS region name and secure-connect-bundle filename.
+
+**Note**: in order to be able to share the same `feature_store.yaml` from both
+the Dockerized `feast` instances and the one on the host machine,
+please put the secure connect bundle in the `python/feature_repos/astra_db/`
+directory itself and refer to it as `./secure-connect-DATABASENAME.zip`
+(i.e. with a relative path).
 
 1. Apply feature definitions to create a Feast repo.
 
