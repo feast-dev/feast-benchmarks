@@ -1,0 +1,15 @@
+services:
+  feast:
+    build:
+      context: ../..
+      dockerfile: docker/redis/Dockerfile
+    ports:
+      - "6566-6581:6566"
+    deploy:
+      replicas: 16
+    links:
+      - redis
+  redis:
+    image: redis
+    ports:
+     - "6379:6379"
